@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sgicc.Controllers.InicioSesionController">
+   <children>
+      <ImageView fx:id="ivImagenInicioSesion" fitHeight="1024.0" fitWidth="720.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Recursos/FondoInicioSesión.jpg" />
+         </image></ImageView>
+      <Label layoutX="868.0" layoutY="87.0" text="Inicio de Sesión">
+         <font>
+            <Font size="64.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfNumPersonal" layoutX="829.0" layoutY="302.0" prefHeight="74.0" prefWidth="520.0" promptText="Número de Personal">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <style>
+            -fx-background-radius: 20;
+         </style>
+      </TextField>
+      <PasswordField fx:id="pfContrasenia" layoutX="829.0" layoutY="553.0" prefHeight="74.0" prefWidth="520.0" promptText="Contraseña">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <style>
+            -fx-background-radius: 20;
+         </style>
+      </PasswordField>
+      <Button layoutX="893.0" layoutY="789.0" mnemonicParsing="false" onAction="#btnIniciaSesion" prefHeight="81.0" prefWidth="392.0" text="Inicia Sesión">
+         <font>
+            <Font size="40.0" />
+         </font>
+         <style>
+            -fx-background-color: #4FA759;
+            -fx-background-radius: 20;
+            -fx-text-fill: white;
+         </style>
+      </Button>
+      <Label layoutX="40.0" layoutY="45.0" text="Facultad de Estadistica e Informática" textFill="WHITE">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <Label layoutX="127.0" layoutY="887.0" text="Sistema de Gestión de Inventario" textFill="WHITE">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="190.0" layoutY="934.0" text="de Centros de Cómputo" textFill="WHITE">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
