@@ -1,14 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.sgicc.Controllers.MenuGeneralController"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sgicc.Controllers.MenuGeneralController">
+   <children>
+       <Label alignment="CENTER" contentDisplay="CENTER" layoutY="721.0" prefHeight="47.0" prefWidth="1080.0" style="-fx-background-color: #295BA5;" text="Universidad Veracruzana" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <ImageView fitHeight="161.25" fitWidth="114.0" layoutX="952.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Recursos/Logo-UV.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="23.0" layoutY="25.0" text="Sistema de Gestión de Centros de Cómputo" textFill="#295ba5">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="57.0" layoutY="95.0" text="Centros Disponibles">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Pane layoutX="57.0" layoutY="200.0" prefHeight="119.0" prefWidth="936.0" style="-fx-background-color: #FAFAF5; -fx-border-color: #E6E6E6; -fx-border-width: 2px; -fx-border-radius: 24px; -fx-background-radius: 24px;">
+         <children>
+            <ImageView fitHeight="119.0" fitWidth="218.0" pickOnBounds="true" preserveRatio="true">
+               <clip>
+                  <Rectangle arcHeight="24" arcWidth="24" height="159" width="291" />
+               </clip>
+               <image>
+                  <Image url="@../Recursos/CC.jpeg" />
+               </image>
+            </ImageView>
+            <Label layoutX="231.0" layoutY="24.0" text="CC1">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="231.0" layoutY="69.0" text="Edificio ECONEX" textFill="#426b1f">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="839.0" layoutY="43.0" mnemonicParsing="false" onAction="#btnIrCC1" prefHeight="30.0" prefWidth="69.0" text="IR   -&gt;">
+               <style>
+                  -fx-background-color: white;
+                  -fx-border-color: black;
+                  -fx-background-radius: 8;
+                  -fx-border-radius: 8;
+               </style>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children></Pane>
+      <Line endX="830.0" layoutX="160.0" layoutY="175.0" startX="-100.0" />
+      <Pane layoutX="57.0" layoutY="350.0" prefHeight="119.0" prefWidth="936.0" style="-fx-background-color: #FAFAF5; -fx-border-color: #E6E6E6; -fx-border-width: 2px; -fx-border-radius: 24px; -fx-background-radius: 24px;">
+         <children>
+            <ImageView fitHeight="119.0" fitWidth="218.0" pickOnBounds="true" preserveRatio="true">
+               <clip>
+                  <Rectangle arcHeight="24" arcWidth="24" height="159" width="291" />
+               </clip>
+               <image>
+                  <Image url="@../Recursos/CC.jpeg" />
+               </image>
+            </ImageView>
+            <Label layoutX="231.0" layoutY="24.0" text="CC2">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="231.0" layoutY="69.0" text="Edificio ECONEX" textFill="#426b1f">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="839.0" layoutY="43.0" mnemonicParsing="false" onAction="#btnIrCC2" prefHeight="30.0" prefWidth="69.0" text="IR   -&gt;">
+               <style>
+                  -fx-background-color: white;
+                  -fx-border-color: black;
+                  -fx-background-radius: 8;
+                  -fx-border-radius: 8;
+               </style>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="57.0" layoutY="500.0" prefHeight="119.0" prefWidth="936.0" style="-fx-background-color: #FAFAF5; -fx-border-color: #E6E6E6; -fx-border-width: 2px; -fx-border-radius: 24px; -fx-background-radius: 24px;">
+         <children>
+            <ImageView fitHeight="119.0" fitWidth="218.0" pickOnBounds="true" preserveRatio="true">
+               <clip>
+                  <Rectangle arcHeight="24" arcWidth="24" height="159" width="291" />
+               </clip>
+               <image>
+                  <Image url="@../Recursos/CC.jpeg" />
+               </image>
+            </ImageView>
+            <Label layoutX="231.0" layoutY="24.0" text="CC1">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="231.0" layoutY="69.0" text="Edificio ECONEX" textFill="#426b1f">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="839.0" layoutY="43.0" mnemonicParsing="false" onAction="#btnIrCC3" prefHeight="30.0" prefWidth="69.0" text="IR   -&gt;">
+               <style>
+                  -fx-background-color: white;
+                  -fx-border-color: black;
+                  -fx-background-radius: 8;
+                  -fx-border-radius: 8;
+               </style>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Button fx:id="btnUsuarios" layoutX="836.0" layoutY="663.0" mnemonicParsing="false" onAction="#btnUsuarios" prefHeight="47.0" prefWidth="230.0" text="Usuarios                              -&gt;">
+         <style>
+            -fx-background-color: white;
+            -fx-border-color: black;
+            -fx-background-radius: 8;
+            -fx-border-radius: 8;
+         </style>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

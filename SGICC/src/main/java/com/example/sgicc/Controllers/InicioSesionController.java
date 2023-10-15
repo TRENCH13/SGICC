@@ -8,9 +8,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -26,7 +28,7 @@ public class InicioSesionController {
     private PasswordField pfContrasenia;
 
     @FXML
-    private ImageView ivImagenInicioSesion;
+    private Button btnIniciaSesion;
 
     @FXML
     private TextField tfNumPersonal;
@@ -37,13 +39,15 @@ public class InicioSesionController {
             usuarioSesion = UsuarioDAO.IniciarSesion(numPersonalBusqueda, contraseniaBusqueda);
             if (usuarioSesion != null) {
 
+                btnIniciaSesion.setStyle("-fx-background-color: white; -fx-text-fill: black;");
+
                 FXMLLoader fxmlLoader;
                 Stage stage = new Stage();
                 Scene scene;
 
                 switch (usuarioSesion.getIdRol()){
                     case 1:
-                        fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/MenuEncargado.fxml"));
+                        fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/MenuGeneral.fxml"));
                         scene = new Scene(fxmlLoader.load());
                         stage.setTitle("Encargado");
                         stage.setScene(scene);
@@ -55,7 +59,6 @@ public class InicioSesionController {
                         stage.setTitle("Administrativo");
                         stage.setScene(scene);
                         stage.show();
-                        break;
                     case 3:
                         fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/Menugeneral.fxml"));
                         scene = new Scene(fxmlLoader.load());
@@ -69,7 +72,7 @@ public class InicioSesionController {
                 stageActual.close();
 
             } else {
-                Alerta.crearAlertaError("Error", "Error al Iniciar Sesión", "Credenciales no coinciden con ningún usuario. Vuelve a intentarlo.").showAndWait();
+                Alerta.crearAlertaError("Error al iniciar sesión", "Credenciales no coinciden con ningun usuario", "Vuelve a intentarlo.").showAndWait();
             }
         }
     }

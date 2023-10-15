@@ -8,36 +8,36 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sgicc.Controllers.InicioSesionController">
+<AnchorPane prefHeight="768.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sgicc.Controllers.InicioSesionController">
    <children>
-      <ImageView fx:id="ivImagenInicioSesion" fitHeight="1024.0" fitWidth="720.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="768.0" fitWidth="543.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Recursos/FondoInicioSesión.jpg" />
          </image></ImageView>
-      <Label layoutX="868.0" layoutY="87.0" text="Inicio de Sesión">
+      <Label layoutX="654.0" layoutY="61.0" text="Inicio de Sesión">
          <font>
-            <Font size="64.0" />
+            <Font size="46.0" />
          </font>
       </Label>
-      <TextField fx:id="tfNumPersonal" layoutX="829.0" layoutY="302.0" prefHeight="74.0" prefWidth="520.0" promptText="Número de Personal">
-         <font>
-            <Font size="24.0" />
-         </font>
+      <TextField fx:id="tfNumPersonal" layoutX="633.0" layoutY="276.0" prefHeight="55.0" prefWidth="360.0" promptText="Número de Personal">
          <style>
             -fx-background-radius: 20;
          </style>
+         <font>
+            <Font size="22.0" />
+         </font>
       </TextField>
-      <PasswordField fx:id="pfContrasenia" layoutX="829.0" layoutY="553.0" prefHeight="74.0" prefWidth="520.0" promptText="Contraseña">
-         <font>
-            <Font size="24.0" />
-         </font>
+      <PasswordField fx:id="pfContrasenia" layoutX="633.0" layoutY="410.0" prefHeight="55.0" prefWidth="360.0" promptText="Contraseña">
          <style>
             -fx-background-radius: 20;
          </style>
-      </PasswordField>
-      <Button layoutX="893.0" layoutY="789.0" mnemonicParsing="false" onAction="#btnIniciaSesion" prefHeight="81.0" prefWidth="392.0" text="Inicia Sesión">
          <font>
-            <Font size="40.0" />
+            <Font size="22.0" />
+         </font>
+      </PasswordField>
+      <Button fx:id="btnIniciaSesion" layoutX="666.0" layoutY="606.0" mnemonicParsing="false" onAction="#btnIniciaSesion" prefHeight="60.0" prefWidth="294.0" text="Inicia Sesión">
+         <font>
+            <Font size="30.0" />
          </font>
          <style>
             -fx-background-color: #4FA759;
@@ -45,19 +45,19 @@
             -fx-text-fill: white;
          </style>
       </Button>
-      <Label layoutX="40.0" layoutY="45.0" text="Facultad de Estadistica e Informática" textFill="WHITE">
+      <Label layoutX="30.0" layoutY="38.0" text="Facultad de Estadistica e Informática" textFill="WHITE">
          <font>
-            <Font size="40.0" />
+            <Font size="30.0" />
          </font>
       </Label>
-      <Label layoutX="127.0" layoutY="887.0" text="Sistema de Gestión de Inventario" textFill="WHITE">
+      <Label layoutX="81.0" layoutY="671.0" text="Sistema de Gestión de Inventario" textFill="WHITE">
          <font>
-            <Font size="32.0" />
+            <Font size="26.0" />
          </font>
       </Label>
-      <Label layoutX="190.0" layoutY="934.0" text="de Centros de Cómputo" textFill="WHITE">
+      <Label layoutX="132.0" layoutY="709.0" text="de Centros de Cómputo" textFill="WHITE">
          <font>
-            <Font size="32.0" />
+            <Font size="26.0" />
          </font>
       </Label>
    </children>
