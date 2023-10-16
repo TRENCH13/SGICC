@@ -16,7 +16,7 @@
          <font>
             <Font size="24.0" />
          </font></Label>
-      <ImageView fitHeight="161.25" fitWidth="114.0" layoutX="952.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1030.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Recursos/Logo-UV.png" />
          </image>
@@ -31,7 +31,7 @@
             <Font size="48.0" />
          </font>
       </Label>
-      <Pane layoutX="57.0" layoutY="200.0" prefHeight="119.0" prefWidth="936.0" style="-fx-background-color: #FAFAF5; -fx-border-color: #E6E6E6; -fx-border-width: 2px; -fx-border-radius: 24px; -fx-background-radius: 24px;">
+      <Pane layoutX="57.0" layoutY="208.0" prefHeight="119.0" prefWidth="936.0" style="-fx-background-color: #FAFAF5; -fx-border-color: #E6E6E6; -fx-border-width: 2px; -fx-border-radius: 24px; -fx-background-radius: 24px;">
          <children>
             <ImageView fitHeight="119.0" fitWidth="218.0" pickOnBounds="true" preserveRatio="true">
                <clip>
@@ -61,10 +61,13 @@
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
          </children></Pane>
       <Line endX="830.0" layoutX="160.0" layoutY="175.0" startX="-100.0" />
-      <Pane layoutX="57.0" layoutY="350.0" prefHeight="119.0" prefWidth="936.0" style="-fx-background-color: #FAFAF5; -fx-border-color: #E6E6E6; -fx-border-width: 2px; -fx-border-radius: 24px; -fx-background-radius: 24px;">
+      <Pane layoutX="57.0" layoutY="358.0" prefHeight="119.0" prefWidth="936.0" style="-fx-background-color: #FAFAF5; -fx-border-color: #E6E6E6; -fx-border-width: 2px; -fx-border-radius: 24px; -fx-background-radius: 24px;">
          <children>
             <ImageView fitHeight="119.0" fitWidth="218.0" pickOnBounds="true" preserveRatio="true">
                <clip>
@@ -94,10 +97,13 @@
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
          </children>
       </Pane>
-      <Pane layoutX="57.0" layoutY="500.0" prefHeight="119.0" prefWidth="936.0" style="-fx-background-color: #FAFAF5; -fx-border-color: #E6E6E6; -fx-border-width: 2px; -fx-border-radius: 24px; -fx-background-radius: 24px;">
+      <Pane layoutX="57.0" layoutY="508.0" prefHeight="119.0" prefWidth="936.0" style="-fx-background-color: #FAFAF5; -fx-border-color: #E6E6E6; -fx-border-width: 2px; -fx-border-radius: 24px; -fx-background-radius: 24px;">
          <children>
             <ImageView fitHeight="119.0" fitWidth="218.0" pickOnBounds="true" preserveRatio="true">
                <clip>
@@ -127,10 +133,13 @@
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
          </children>
       </Pane>
-      <Button fx:id="btnUsuarios" layoutX="836.0" layoutY="663.0" mnemonicParsing="false" onAction="#btnUsuarios" prefHeight="47.0" prefWidth="230.0" text="Usuarios                              -&gt;">
+      <Button layoutX="836.0" layoutY="663.0" mnemonicParsing="false" onAction="#btnUsuarios" prefHeight="47.0" prefWidth="230.0" text="Usuarios                              -&gt;">
          <style>
             -fx-background-color: white;
             -fx-border-color: black;
@@ -140,6 +149,13 @@
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
+      <Label fx:id="lbUser" alignment="CENTER_RIGHT" layoutX="615.0" layoutY="25.0" prefHeight="30.0" prefWidth="400.0" text="User">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
    </children>
 </Pane>

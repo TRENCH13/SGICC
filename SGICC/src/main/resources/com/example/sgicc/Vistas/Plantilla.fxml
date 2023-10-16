@@ -14,10 +14,15 @@
          <font>
             <Font size="24.0" />
          </font></Label>
-      <ImageView fitHeight="161.25" fitWidth="114.0" layoutX="952.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1030.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Recursos/Logo-UV.png" />
          </image>
       </ImageView>
+      <Label fx:id="lbUser" alignment="CENTER_RIGHT" layoutX="820.0" layoutY="24.0" prefHeight="27.0" prefWidth="200.0" text="User">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

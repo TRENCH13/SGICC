@@ -9,10 +9,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -44,26 +44,36 @@ public class InicioSesionController {
                 FXMLLoader fxmlLoader;
                 Stage stage = new Stage();
                 Scene scene;
+                Label lbUser;
 
                 switch (usuarioSesion.getIdRol()){
                     case 1:
                         fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/MenuGeneral.fxml"));
                         scene = new Scene(fxmlLoader.load());
+                        lbUser = (Label) scene.lookup("#lbUser");
+                        lbUser.setText(usuarioSesion.getNombre()+" "+usuarioSesion.getApellido());
                         stage.setTitle("Encargado");
                         stage.setScene(scene);
+                        stage.getIcons().add(new Image(IniciadorAplicacion.class.getResource("/com/example/sgicc/Recursos/icono_UV.png").toExternalForm()));
                         stage.show();
                         break;
                     case 2:
                         fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/MenuGeneral.fxml"));
                         scene = new Scene(fxmlLoader.load());
+                        lbUser = (Label) scene.lookup("#lbUser");
+                        lbUser.setText(usuarioSesion.getNombre()+" "+usuarioSesion.getApellido());
                         stage.setTitle("Administrativo");
                         stage.setScene(scene);
+                        stage.getIcons().add(new Image(IniciadorAplicacion.class.getResource("/com/example/sgicc/Recursos/icono_UV.png").toExternalForm()));
                         stage.show();
                     case 3:
                         fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/Menugeneral.fxml"));
                         scene = new Scene(fxmlLoader.load());
+                        lbUser = (Label) scene.lookup("#lbUser");
+                        lbUser.setText(usuarioSesion.getNombre()+" "+usuarioSesion.getApellido());
                         stage.setTitle("Técnico Académico");
                         stage.setScene(scene);
+                        stage.getIcons().add(new Image(IniciadorAplicacion.class.getResource("/com/example/sgicc/Recursos/icono_UV.png").toExternalForm()));
                         stage.show();
                         break;
                 }

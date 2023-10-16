@@ -8,11 +8,16 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class MenuGeneralController {
+
+    @FXML
+    private Label lbUser;
 
     @FXML
     void btnIrCC1(ActionEvent event) throws IOException {
@@ -21,7 +26,10 @@ public class MenuGeneralController {
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         stage.setScene(scene);
+        Label lbUserNext = (Label) scene.lookup("#lbUser");
+        lbUserNext.setText(lbUser.getText());
         stage.setTitle("CC1");
+        stage.getIcons().add(new Image(IniciadorAplicacion.class.getResource("/com/example/sgicc/Recursos/icono_UV.png").toExternalForm()));
         stage.show();
     }
 
@@ -32,7 +40,10 @@ public class MenuGeneralController {
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         stage.setScene(scene);
+        Label lbUserNext = (Label) scene.lookup("#lbUser");
+        lbUserNext.setText(lbUser.getText());
         stage.setTitle("CC2");
+        stage.getIcons().add(new Image(IniciadorAplicacion.class.getResource("/com/example/sgicc/Recursos/icono_UV.png").toExternalForm()));
         stage.show();
     }
 
@@ -43,7 +54,10 @@ public class MenuGeneralController {
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         stage.setScene(scene);
+        Label lbUserNext = (Label) scene.lookup("#lbUser");
+        lbUserNext.setText(lbUser.getText());
         stage.setTitle("CC3");
+        stage.getIcons().add(new Image(IniciadorAplicacion.class.getResource("/com/example/sgicc/Recursos/icono_UV.png").toExternalForm()));
         stage.show();
     }
 

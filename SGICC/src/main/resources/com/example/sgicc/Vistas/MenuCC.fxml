@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -8,16 +9,139 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sgicc.Controllers.MenuCCController">
    <children>
+      <AnchorPane prefHeight="768.0" prefWidth="250.0">
+         <children>
+            <VBox prefHeight="724.0" prefWidth="297.0" style="-fx-background-color: #295BA5;">
+               <children>
+                  <AnchorPane prefHeight="80.0" prefWidth="297.0" style="-fx-background-color: white;">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Recursos/Logo-UV.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="lbUser" layoutX="62.0" layoutY="24.0" prefHeight="30.0" prefWidth="220.0" text="User">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <Button graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnEquiposComputo" prefHeight="80.0" prefWidth="297.0" text="Equipos de Cómputo" textFill="WHITE">
+                     <style>
+                        -fx-background-color: #295BA5;
+                        -fx-border-width: 0;-fx-padding: 0 0 0 -60;</style>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Recursos/icono_computadora.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+
+                  <Button graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnPerifericos" prefHeight="80.0" prefWidth="297.0" text="Periféricos" textFill="WHITE">
+                     <style>
+                        -fx-background-color: #295BA5;
+                        -fx-border-width: 0;-fx-padding: 0 0 0 -130;</style>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Recursos/icono_mouse.png" />
+                           </image></ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+
+                  <Button graphicTextGap="8.0" mnemonicParsing="false" onAction="#btnBitacora" prefHeight="80.0" prefWidth="297.0" text="Bitácora" textFill="WHITE">
+                     <style>
+                        -fx-background-color: #295BA5;
+                        -fx-border-width: 0;-fx-padding: 0 0 0 -145;</style>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Recursos/icono_bitacora.png" />
+                           </image></ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+
+                  <Button graphicTextGap="13.0" mnemonicParsing="false" onAction="#btnAsignarSoftware" prefHeight="80.0" prefWidth="297.0" text="Asignar Software a Equipo" textFill="WHITE">
+                     <style>
+                        -fx-background-color: #295BA5;
+                        -fx-border-width: 0;-fx-padding: 0 0 0 -25;</style>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Recursos/icono_asignarsoftware.png" />
+                           </image></ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+
+                  <Button graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnConsultarSoftware" prefHeight="80.0" prefWidth="297.0" text="Consultar Software Instalado" textFill="WHITE">
+                     <style>
+                        -fx-background-color: #295BA5;
+                        -fx-border-width: 0;-fx-padding: 0 0 0 -5;</style>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Recursos/icono_software.png" />
+                           </image></ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnRegresar" prefHeight="80.0" prefWidth="297.0" style="&#10;                        -fx-background-color: #295BA5;&#10;                        -fx-border-width: 0;-fx-padding: 0 0 0 -5;" text="Regresar" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Recursos/icono_regresar.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect></VBox>
+         </children></AnchorPane>
        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="723.0" prefHeight="47.0" prefWidth="1080.0" style="-fx-background-color: #295BA5;" text="Universidad Veracruzana" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font></Label>
-      <ImageView fitHeight="161.25" fitWidth="114.0" layoutX="952.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Recursos/Logo-UV.png" />
-         </image>
-      </ImageView>
    </children>
 </Pane>
