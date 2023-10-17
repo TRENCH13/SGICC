@@ -11,7 +11,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sgicc.Controllers.MenuCCController">
    <children>
-      <AnchorPane prefHeight="768.0" prefWidth="250.0">
+      <AnchorPane prefHeight="768.0" prefWidth="297.0">
          <children>
             <VBox prefHeight="724.0" prefWidth="297.0" style="-fx-background-color: #295BA5;">
                <children>
@@ -29,7 +29,7 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <Button graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnEquiposComputo" prefHeight="80.0" prefWidth="297.0" text="Equipos de Cómputo" textFill="WHITE">
+                  <Button fx:id="btnEquiposComputo" graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnEquiposComputo" prefHeight="80.0" prefWidth="297.0" text="Equipos de Cómputo" textFill="WHITE">
                      <style>
                         -fx-background-color: #295BA5;
                         -fx-border-width: 0;-fx-padding: 0 0 0 -60;</style>
@@ -48,7 +48,7 @@
                      </cursor>
                   </Button>
 
-                  <Button graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnPerifericos" prefHeight="80.0" prefWidth="297.0" text="Periféricos" textFill="WHITE">
+                  <Button fx:id="btnPerifericos" graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnPerifericos" prefHeight="80.0" prefWidth="297.0" text="Periféricos" textFill="WHITE">
                      <style>
                         -fx-background-color: #295BA5;
                         -fx-border-width: 0;-fx-padding: 0 0 0 -130;</style>
@@ -66,7 +66,7 @@
                      </cursor>
                   </Button>
 
-                  <Button graphicTextGap="8.0" mnemonicParsing="false" onAction="#btnBitacora" prefHeight="80.0" prefWidth="297.0" text="Bitácora" textFill="WHITE">
+                  <Button fx:id="btnBitacora" graphicTextGap="8.0" mnemonicParsing="false" onAction="#btnBitacora" prefHeight="80.0" prefWidth="297.0" text="Bitácora" textFill="WHITE">
                      <style>
                         -fx-background-color: #295BA5;
                         -fx-border-width: 0;-fx-padding: 0 0 0 -145;</style>
@@ -84,25 +84,7 @@
                      </cursor>
                   </Button>
 
-                  <Button graphicTextGap="13.0" mnemonicParsing="false" onAction="#btnAsignarSoftware" prefHeight="80.0" prefWidth="297.0" text="Asignar Software a Equipo" textFill="WHITE">
-                     <style>
-                        -fx-background-color: #295BA5;
-                        -fx-border-width: 0;-fx-padding: 0 0 0 -25;</style>
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Recursos/icono_asignarsoftware.png" />
-                           </image></ImageView>
-                     </graphic>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-
-                  <Button graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnConsultarSoftware" prefHeight="80.0" prefWidth="297.0" text="Consultar Software Instalado" textFill="WHITE">
+                  <Button fx:id="btnConsultarSoftware" graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnConsultarSoftware" prefHeight="80.0" prefWidth="297.0" text="Consultar Software Instalado" textFill="WHITE">
                      <style>
                         -fx-background-color: #295BA5;
                         -fx-border-width: 0;-fx-padding: 0 0 0 -5;</style>
@@ -113,6 +95,24 @@
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Recursos/icono_software.png" />
+                           </image></ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+
+                  <Button fx:id="btnAsignarSoftware" graphicTextGap="13.0" mnemonicParsing="false" onAction="#btnAsignarSoftware" prefHeight="80.0" prefWidth="297.0" text="Asignar Software a Equipo" textFill="WHITE">
+                     <style>
+                        -fx-background-color: #295BA5;
+                        -fx-border-width: 0;-fx-padding: 0 0 0 -25;</style>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Recursos/icono_asignarsoftware.png" />
                            </image></ImageView>
                      </graphic>
                      <cursor>
@@ -143,5 +143,6 @@
          <font>
             <Font size="24.0" />
          </font></Label>
+      <AnchorPane fx:id="apVistaMenuCC" layoutX="297.0" prefHeight="721.0" prefWidth="783.0" style="-fx-background-color: white;" />
    </children>
 </Pane>

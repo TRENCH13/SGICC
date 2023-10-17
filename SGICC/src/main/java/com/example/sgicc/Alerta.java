@@ -6,6 +6,8 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 
+import java.util.Optional;
+
 public class Alerta {
     public static Alert crearAlertaInformacion(String titulo, String encabezado, String mensaje) {
         Alert alert = new Alert(AlertType.INFORMATION);
@@ -25,10 +27,19 @@ public class Alerta {
         return alert;
     }
 
-    public static Alert crearAlertaConfirmacion(String titulo, String encabezado, String mensaje) {
+    public static boolean crearAlertaConfirmacion(String titulo, String encabezado, String mensaje) {
         Alert alert = new Alert(AlertType.CONFIRMATION);
         configurarAlerta(alert, titulo, encabezado, mensaje);
-        return alert;
+
+        // Obtén la respuesta del usuario
+        Optional<ButtonType> resultado = alert.showAndWait();
+
+        // Verifica qué botón se presionó
+        if (resultado.isPresent() && resultado.get() == ButtonType.OK) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     private static void configurarAlerta(Alert alert, String titulo, String encabezado, String mensaje) {

@@ -45,11 +45,15 @@ public class InicioSesionController {
                 Stage stage = new Stage();
                 Scene scene;
                 Label lbUser;
+                MenuGeneralController menuGeneral;
 
                 switch (usuarioSesion.getIdRol()){
                     case 1:
                         fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/MenuGeneral.fxml"));
                         scene = new Scene(fxmlLoader.load());
+                        menuGeneral = fxmlLoader.getController();
+                        menuGeneral.setIdRol(usuarioSesion.getIdRol());
+                        menuGeneral.asignarCCRecuperados();
                         lbUser = (Label) scene.lookup("#lbUser");
                         lbUser.setText(usuarioSesion.getNombre()+" "+usuarioSesion.getApellido());
                         stage.setTitle("Encargado");
@@ -60,6 +64,11 @@ public class InicioSesionController {
                     case 2:
                         fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/MenuGeneral.fxml"));
                         scene = new Scene(fxmlLoader.load());
+                        menuGeneral = fxmlLoader.getController();
+                        menuGeneral.setIdRol(usuarioSesion.getIdRol());
+                        menuGeneral.btnUsuarios.setVisible(false);
+                        menuGeneral.btnCentrosComputo.setVisible(false);
+                        menuGeneral.asignarCCRecuperados();
                         lbUser = (Label) scene.lookup("#lbUser");
                         lbUser.setText(usuarioSesion.getNombre()+" "+usuarioSesion.getApellido());
                         stage.setTitle("Administrativo");
@@ -69,6 +78,11 @@ public class InicioSesionController {
                     case 3:
                         fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/Menugeneral.fxml"));
                         scene = new Scene(fxmlLoader.load());
+                        menuGeneral = fxmlLoader.getController();
+                        menuGeneral.setIdRol(usuarioSesion.getIdRol());
+                        menuGeneral.btnUsuarios.setVisible(false);
+                        menuGeneral.btnCentrosComputo.setVisible(false);
+                        menuGeneral.asignarCCRecuperados();
                         lbUser = (Label) scene.lookup("#lbUser");
                         lbUser.setText(usuarioSesion.getNombre()+" "+usuarioSesion.getApellido());
                         stage.setTitle("Técnico Académico");

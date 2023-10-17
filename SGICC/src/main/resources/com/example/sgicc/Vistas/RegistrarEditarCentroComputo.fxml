@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sgicc.Controllers.RegistrarEditarCentroComputoController">
+   <children>
+      <Label layoutX="23.0" layoutY="25.0" text="Sistema de Gestión de Centros de Cómputo" textFill="#295ba5">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbTítulo" layoutX="57.0" layoutY="95.0" text="título">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+       <Label alignment="CENTER" contentDisplay="CENTER" layoutY="723.0" prefHeight="47.0" prefWidth="1080.0" style="-fx-background-color: #295BA5;" text="Universidad Veracruzana" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Line endX="850.0" layoutX="160.0" layoutY="175.0" startX="-100.0" />
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1030.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Recursos/Logo-UV.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lbUser" alignment="CENTER_RIGHT" layoutX="577.0" layoutY="28.0" prefHeight="30.0" prefWidth="400.0" text="User">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label layoutX="60.0" layoutY="303.0" text="Código Centro de Cómputo:">
+         <font>
+            <Font size="27.0" />
+         </font></Label>
+      <Label layoutX="305.0" layoutY="427.0" text="Edificio:">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tbCodigoCC" layoutX="427.0" layoutY="301.0" prefHeight="39.0" prefWidth="584.0" promptText="Ej: CC1">
+         <style>
+            -fx-background-radius: 20;
+         </style>
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tbEdificio" layoutX="427.0" layoutY="425.0" prefHeight="39.0" prefWidth="584.0" promptText="Ej: ECONEX">
+         <style>
+            -fx-background-radius: 20;
+         </style>
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btnRegistrarEditar" layoutX="561.0" layoutY="650.0" mnemonicParsing="false" onAction="#btnRegistrarEditar" prefHeight="40.0" prefWidth="300.0" text="texto">
+         <style>
+            -fx-background-color: #4FA759;
+            -fx-background-radius: 8;
+            -fx-text-fill: white;
+         </style>
+         <font>
+            <Font size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="914.0" layoutY="650.0" mnemonicParsing="false" onAction="#btnRegresar" text="Regresar">
+         <style>
+            -fx-background-color: white;
+            -fx-border-color: black;
+            -fx-background-radius: 8;
+            -fx-border-radius: 8;
+         </style>
+         <font>
+            <Font size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</Pane>
