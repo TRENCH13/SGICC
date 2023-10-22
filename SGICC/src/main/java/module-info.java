@@ -9,4 +9,5 @@ module com.example.sgicc {
     exports com.example.sgicc;
     exports com.example.sgicc.Controllers;
     opens com.example.sgicc.Controllers to javafx.fxml;
+    opens com.example.sgicc.Modelos;
 }

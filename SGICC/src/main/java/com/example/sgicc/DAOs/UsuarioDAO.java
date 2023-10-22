@@ -17,7 +17,7 @@ public class UsuarioDAO {
 
         try{
 
-            String consultaSQL = "SELECT * FROM usuario WHERE numPersonal = ? AND contrasenia = ?";
+            String consultaSQL = "SELECT * FROM usuario WHERE BINARY numPersonal = ? AND BINARY contrasenia = ?";
             PreparedStatement statement = conexionBD.prepareStatement(consultaSQL);
             statement.setString(1, NumPersonal);
             statement.setString(2, Contrasenia);

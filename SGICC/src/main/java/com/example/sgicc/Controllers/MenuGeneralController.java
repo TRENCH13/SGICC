@@ -28,6 +28,8 @@ public class MenuGeneralController {
 
     private int rolActual = 0;
 
+    private int CCSelecionado = 0;
+
     @FXML
     public Label lbUser;
 
@@ -108,92 +110,127 @@ public class MenuGeneralController {
         botonIr.setFont(Font.font("System Bold", 15));
         botonIr.setCursor(javafx.scene.Cursor.HAND);
 
-        Button botonEliminar = new Button("Eliminar  ->");
-        botonEliminar.setLayoutX(720);
-        botonEliminar.setLayoutY(43);
-        botonEliminar.setMnemonicParsing(false);
-        botonEliminar.setPrefHeight(30);
-        botonEliminar.setPrefWidth(100);
-        botonEliminar.setStyle(
-                "-fx-background-color: white; " +
-                        "-fx-border-color: black; " +
-                        "-fx-background-radius: 8; " +
-                        "-fx-border-radius: 8;"
-        );
-        botonEliminar.setFont(Font.font("System Bold", 15));
-        botonEliminar.setCursor(javafx.scene.Cursor.HAND);
+        if (rolActual == 1){
 
-        Button botonEditar = new Button("Editar  ->");
-        botonEditar.setLayoutX(610);
-        botonEditar.setLayoutY(43);
-        botonEditar.setMnemonicParsing(false);
-        botonEditar.setPrefHeight(30);
-        botonEditar.setPrefWidth(90);
-        botonEditar.setStyle(
-                "-fx-background-color: white; " +
-                        "-fx-border-color: black; " +
-                        "-fx-background-radius: 8; " +
-                        "-fx-border-radius: 8;"
-        );
-        botonEditar.setFont(Font.font("System Bold", 15));
-        botonEditar.setCursor(javafx.scene.Cursor.HAND);
+            Button botonEliminar = new Button("Eliminar  ->");
+            botonEliminar.setLayoutX(720);
+            botonEliminar.setLayoutY(43);
+            botonEliminar.setMnemonicParsing(false);
+            botonEliminar.setPrefHeight(30);
+            botonEliminar.setPrefWidth(100);
+            botonEliminar.setStyle(
+                    "-fx-background-color: white; " +
+                            "-fx-border-color: black; " +
+                            "-fx-background-radius: 8; " +
+                            "-fx-border-radius: 8;"
+            );
+            botonEliminar.setFont(Font.font("System Bold", 15));
+            botonEliminar.setCursor(javafx.scene.Cursor.HAND);
 
-        customPane.getChildren().addAll(imageView, codigoCCLabel, edificioLabel, botonEliminar, botonEditar, botonIr);
+            Button botonEditar = new Button("Editar  ->");
+            botonEditar.setLayoutX(610);
+            botonEditar.setLayoutY(43);
+            botonEditar.setMnemonicParsing(false);
+            botonEditar.setPrefHeight(30);
+            botonEditar.setPrefWidth(90);
+            botonEditar.setStyle(
+                    "-fx-background-color: white; " +
+                            "-fx-border-color: black; " +
+                            "-fx-background-radius: 8; " +
+                            "-fx-border-radius: 8;"
+            );
+            botonEditar.setFont(Font.font("System Bold", 15));
+            botonEditar.setCursor(javafx.scene.Cursor.HAND);
 
-        botonIr.setOnAction(e -> {
-            try {
+            customPane.getChildren().addAll(imageView, codigoCCLabel, edificioLabel, botonEliminar, botonEditar, botonIr);
+
+            botonIr.setOnAction(e -> {
+                try {
+                    Stage stage = (Stage) lbUser.getScene().getWindow();
+                    FXMLLoader fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/MenuCC.fxml"));
+                    Parent root = fxmlLoader.load();
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+                    MenuCCController menuCC = fxmlLoader.getController();
+                    menuCC.setIdRol(rolActual);
+                    CCSelecionado = idCentro;
+                    menuCC.idCentroComputo = CCSelecionado;
+
+
+                    if (rolActual == 2 || rolActual == 3) {
+                        menuCC.btnAsignarSoftware.setVisible(false);
+                    }
+
+                    Label lbUserNext = (Label) scene.lookup("#lbUser");
+                    lbUserNext.setText(lbUser.getText());
+                    stage.setTitle("CC1");
+                    stage.getIcons().add(new Image(IniciadorAplicacion.class.getResource("/com/example/sgicc/Recursos/icono_UV.png").toExternalForm()));
+                    stage.show();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            });
+
+            botonEliminar.setOnAction(e ->{
+                if (Alerta.crearAlertaConfirmacion("Eliminar Centro de Cómputo", "¿Está seguro de eliminar el centro de cómputo?", "Si se elimina, todos sus elementos perderan su asignación.")){
+                    CentroComputoDAO.eliminarCentroComputo(idCentro);
+                    asignarCCRecuperados();
+                }
+            });
+
+            botonEditar.setOnAction(e ->{
                 Stage stage = (Stage) lbUser.getScene().getWindow();
-                FXMLLoader fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/MenuCC.fxml"));
-                Parent root = fxmlLoader.load();
+                FXMLLoader fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/RegistrarEditarCentroComputo.fxml"));
+                Parent root = null;
+                try {
+                    root = fxmlLoader.load();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
-                MenuCCController menuCC = fxmlLoader.getController();
-                menuCC.setIdRol(rolActual);
-
-                if (rolActual == 2 || rolActual == 3) {
-                    menuCC.btnAsignarSoftware.setVisible(false);
-                }
-
-                Label lbUserNext = (Label) scene.lookup("#lbUser");
-                lbUserNext.setText(lbUser.getText());
-                stage.setTitle("CC1");
+                RegistrarEditarCentroComputoController edicionCCController = fxmlLoader.getController();
+                edicionCCController.btnRegistrarEditar.setText("Editar Centro de Computo");
+                edicionCCController.lbUser.setText(lbUser.getText());
+                edicionCCController.lbTítulo.setText("Edición de Centro de Cómputo");
+                edicionCCController.setIdRol(rolActual);
+                edicionCCController.setEsEdicion(true);
+                edicionCCController.centroEditar = new CentroComputo(idCentro, codigoCC, edificio);
+                edicionCCController.setEdicion();
+                stage.setTitle("Editar Centro de Cómputo");
                 stage.getIcons().add(new Image(IniciadorAplicacion.class.getResource("/com/example/sgicc/Recursos/icono_UV.png").toExternalForm()));
                 stage.show();
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        });
+            });
 
-        botonEliminar.setOnAction(e ->{
-            if (Alerta.crearAlertaConfirmacion("Eliminar Centro de Cómputo", "¿Está seguro de eliminar el centro de cómputo?", "Si se elimina, todos sus elementos perderan su asignación.")){
-                CentroComputoDAO.eliminarCentroComputo(idCentro);
-                asignarCCRecuperados();
-            }
-        });
+        }else{
 
-        botonEditar.setOnAction(e ->{
-            Stage stage = (Stage) lbUser.getScene().getWindow();
-            FXMLLoader fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/RegistrarEditarCentroComputo.fxml"));
-            Parent root = null;
-            try {
-                root = fxmlLoader.load();
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
-            }
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            RegistrarEditarCentroComputoController edicionCCController = fxmlLoader.getController();
-            edicionCCController.btnRegistrarEditar.setText("Editar Centro de Computo");
-            edicionCCController.lbUser.setText(lbUser.getText());
-            edicionCCController.lbTítulo.setText("Edición de Centro de Cómputo");
-            edicionCCController.setIdRol(rolActual);
-            edicionCCController.setEsEdicion(true);
-            edicionCCController.centroEditar = new CentroComputo(idCentro, codigoCC, edificio);
-            edicionCCController.setEdicion();
-            stage.setTitle("Editar Centro de Cómputo");
-            stage.getIcons().add(new Image(IniciadorAplicacion.class.getResource("/com/example/sgicc/Recursos/icono_UV.png").toExternalForm()));
-            stage.show();
-        });
+            customPane.getChildren().addAll(imageView, codigoCCLabel, edificioLabel, botonIr);
+
+            botonIr.setOnAction(e -> {
+                try {
+                    Stage stage = (Stage) lbUser.getScene().getWindow();
+                    FXMLLoader fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/MenuCC.fxml"));
+                    Parent root = fxmlLoader.load();
+                    Scene scene = new Scene(root);
+                    MenuCCController menuCC = fxmlLoader.getController();
+                    menuCC.setIdRol(rolActual);
+                    menuCC.idCentroComputo = idCentro;
+                    stage.setScene(scene);
+                    if (rolActual == 2 || rolActual == 3) {
+                        menuCC.btnAsignarSoftware.setVisible(false);
+                    }
+
+                    Label lbUserNext = (Label) scene.lookup("#lbUser");
+                    lbUserNext.setText(lbUser.getText());
+                    stage.setTitle("CC1");
+                    stage.getIcons().add(new Image(IniciadorAplicacion.class.getResource("/com/example/sgicc/Recursos/icono_UV.png").toExternalForm()));
+                    stage.show();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            });
+
+        }
 
         return customPane;
     }

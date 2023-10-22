@@ -1,12 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
 
+<AnchorPane prefHeight="723.0" prefWidth="783.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sgicc.Controllers.EquiposComputoController">
+   <children>
+       <Label layoutX="23.0" layoutY="25.0" text="Sistema de Gestión de Centros de Cómputo" textFill="#295ba5">
+           <font>
+               <Font size="24.0" />
+           </font>
+       </Label>
+       <TableView fx:id="tvEquiposComputo" layoutY="88.0" prefHeight="567.0" prefWidth="783.0" style="-fx-background-color: white; -fx-border-radius: 0;" stylesheets="@tableview.css">
+           <columns>
+               <TableColumn fx:id="tcCodigo" prefWidth="70.0" text="Código" />
+               <TableColumn fx:id="tcProcesador" prefWidth="95.0" text="Procesador" />
+               <TableColumn fx:id="tcMemoria" prefWidth="80.0" text="Memoria" />
+               <TableColumn fx:id="tcAlmacenamiento" prefWidth="130.0" text="Almacenamiento" />
+               <TableColumn fx:id="tcTarjetaMadre" prefWidth="110.0" text="Tarjeta Madre" />
+               <TableColumn fx:id="tcGabinete" prefWidth="94.0" text="Gabinete" />
+               <TableColumn fx:id="tcSistemaOperativo" prefWidth="130.0" text="Sistema Operativo" />
+               <TableColumn fx:id="tcEstado" prefWidth="72.0" text="Estado" />
+           </columns>
+       </TableView>
+       <Button fx:id="btnEliminar" layoutX="689.0" layoutY="676.0" mnemonicParsing="false" onAction="#btnEliminar" text="Eliminar">
+           <style>
+               -fx-background-color: white;
+               -fx-border-color: black;
+               -fx-background-radius: 8;
+               -fx-border-radius: 8;
+           </style>
+           <font>
+               <Font name="System Bold" size="15.0" />
+           </font>
+           <cursor>
+               <Cursor fx:constant="HAND" />
+           </cursor>
+       </Button>
+       <Button fx:id="btnEditar" layoutX="604.0" layoutY="676.0" mnemonicParsing="false" onAction="#btnEditar" text="Editar">
+           <style>
+               -fx-background-color: white;
+               -fx-border-color: black;
+               -fx-background-radius: 8;
+               -fx-border-radius: 8;
+           </style>
+           <font>
+               <Font name="System Bold" size="15.0" />
+           </font>
+           <cursor>
+               <Cursor fx:constant="HAND" />
+           </cursor>
+       </Button>
+       <Button fx:id="btnAgregar" layoutX="309.0" layoutY="676.0" mnemonicParsing="false" onAction="#btnAgregar" text="Agregar nuevo Equipo de Cómputo">
+           <style>
+               -fx-background-color: white;
+               -fx-border-color: black;
+               -fx-background-radius: 8;
+               -fx-border-radius: 8;
+           </style>
+           <font>
+               <Font name="System Bold" size="15.0" />
+           </font>
+           <cursor>
+               <Cursor fx:constant="HAND" />
+           </cursor>
+       </Button>
 
-<AnchorPane prefHeight="723.0" prefWidth="783.0" style="-fx-background-color: red;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sgicc.Controllers.EquiposComputoController">
-
+   </children>
 </AnchorPane>

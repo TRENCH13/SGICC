@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<AnchorPane prefHeight="723.0" prefWidth="783.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sgicc.Controllers.RegistrarEditarEquipoComputoController">
+    <children>
+        <Label layoutX="23.0" layoutY="25.0" text="Sistema de Gestión de Centros de Cómputo" textFill="#295ba5">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbTítulo" layoutX="57.0" layoutY="95.0" text="título">
+            <font>
+                <Font size="48.0" />
+            </font>
+        </Label>
+        <Line endX="570.0" layoutX="160.0" layoutY="175.0" startX="-100.0" />
+        <Label layoutX="57.0" layoutY="220.0" text="Código:">
+            <font>
+                <Font size="22.0" />
+            </font></Label>
+        <Label layoutX="60.0" layoutY="283.33" text="Procesador:">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+      <Label layoutX="58.0" layoutY="346.66" text="Memoria:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="57.0" layoutY="410.0" text="Almacenamiento:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="58.0" layoutY="473.33" text="Tarjeta Madre:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="54.0" layoutY="600.0" text="Gabinete:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+        <TextField fx:id="tbCodigoEQ" layoutX="282.0" layoutY="216.0" prefHeight="44.0" prefWidth="450.0" promptText="Ej: EQ001">
+            <style>
+                -fx-background-radius: 20;
+            </style>
+         <font>
+            <Font size="19.0" />
+         </font>
+        </TextField>
+        <TextField fx:id="tbProcesadorEQ" layoutX="282.0" layoutY="277.0" prefHeight="44.0" prefWidth="450.0" promptText="Ej: Intel Core i5 ">
+            <style>
+                -fx-background-radius: 20;
+            </style>
+         <font>
+            <Font size="19.0" />
+         </font>
+        </TextField>
+        <Button fx:id="btnRegistrarEditar" layoutX="412.0" layoutY="670.0" mnemonicParsing="false" onAction="#btnRegistrarEditar" prefHeight="33.0" prefWidth="241.0" text="texto">
+            <style>
+                -fx-background-color: #4FA759;
+                -fx-background-radius: 8;
+                -fx-text-fill: white;
+            </style>
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button layoutX="677.0" layoutY="670.0" mnemonicParsing="false" onAction="#btnRegresar" text="Regresar">
+            <style>
+                -fx-background-color: white;
+                -fx-border-color: black;
+                -fx-background-radius: 8;
+                -fx-border-radius: 8;
+            </style>
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+      <TextField fx:id="tbAlmacenamientoEQ" layoutX="282.0" layoutY="404.0" prefHeight="44.0" prefWidth="450.0" promptText="Ej: 256 GB SSD" style="-fx-background-radius: 20;">
+         <font>
+            <Font size="19.0" />
+         </font></TextField>
+      <TextField fx:id="tbTarjetaMadreEQ" layoutX="282.0" layoutY="467.0" prefHeight="44.0" prefWidth="450.0" promptText="Ej: ASUS H110M" style="-fx-background-radius: 20;">
+         <font>
+            <Font size="19.0" />
+         </font></TextField>
+      <TextField fx:id="tbGabineteEQ" layoutX="282.0" layoutY="596.0" prefHeight="44.0" prefWidth="450.0" promptText="Ej: ATX Mid-Tower" style="-fx-background-radius: 20; ">
+         <font>
+            <Font size="19.0" />
+         </font></TextField>
+      <TextField fx:id="tbMemoriaEQ" layoutX="282.0" layoutY="340.0" prefHeight="44.0" prefWidth="450.0" promptText="Ej: 8 GB" style="-fx-background-radius: 20;">
+         <font>
+            <Font size="19.0" />
+         </font></TextField>
+      <Label layoutX="57.0" layoutY="536.66" text="Sistema Operativo:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tbSistemaOperativoEQ" layoutX="282.0" layoutY="531.0" prefHeight="44.0" prefWidth="450.0" promptText="Windows 10" style="-fx-background-radius: 20; ">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </TextField>
+    </children>
+</AnchorPane>

@@ -20,6 +20,8 @@ public class MenuCCController {
 
     private int rolActual = 0;
 
+    public int idCentroComputo = 0;
+
     @FXML
     private AnchorPane apVistaMenuCC;
 
@@ -49,6 +51,16 @@ public class MenuCCController {
     void btnEquiposComputo(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/EquiposComputo.fxml"));
         Parent root = fxmlLoader.load();
+        EquiposComputoController ventanaEquiposComputo = fxmlLoader.getController();
+        ventanaEquiposComputo.rolActual = rolActual;
+        ventanaEquiposComputo.llenarTabla(idCentroComputo);
+
+        if (rolActual != 1){
+            ventanaEquiposComputo.btnAgregar.setVisible(false);
+            ventanaEquiposComputo.btnEditar.setVisible(false);
+            ventanaEquiposComputo.btnEliminar.setVisible(false);
+        }
+
         apVistaMenuCC.getChildren().setAll(root);
         refrescarBotones();
         btnEquiposComputo.setStyle("-fx-background-color: #173562; -fx-border-width: 0;-fx-padding: 0 0 0 -60;");
