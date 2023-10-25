@@ -74,13 +74,12 @@ public class RegistrarEditarCentroComputoController {
         }
     }
 
-    private boolean validarCampos(){
-        if (!tbCodigoCC.getText().isEmpty() && !tbEdificio.getText().isEmpty()){
-            return true;
-        }else{
-            Alerta.crearAlertaError("Error", "Campos vacios", "Debe llenar todos los campos para continuar.").showAndWait();
+    private boolean validarCampos() {
+        if (tbCodigoCC.getText().isEmpty() || tbEdificio.getText().isEmpty()) {
+            Alerta.crearAlertaError("Error", "Campos vacíos", "Debe llenar todos los campos para continuar.").showAndWait();
             return false;
         }
+        return true;
     }
 
     @FXML

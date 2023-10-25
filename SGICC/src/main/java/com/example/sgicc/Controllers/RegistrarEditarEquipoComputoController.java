@@ -93,14 +93,14 @@ public class RegistrarEditarEquipoComputoController {
 
     }
 
-    private boolean validarCampos(){
-        if (!tbGabineteEQ.getText().isEmpty() || !tbProcesadorEQ.getText().isEmpty() || !tbAlmacenamientoEQ.getText().isEmpty() || !tbTarjetaMadreEQ.getText().isEmpty() || !tbCodigoEQ.getText().isEmpty() || !tbMemoriaEQ.getText().isEmpty()){
-            return true;
-        }else{
-            Alerta.crearAlertaError("Error", "Campos vacios", "Debe llenar todos los campos para continuar.").showAndWait();
+    private boolean validarCampos() {
+        if (tbCodigoEQ.getText().isEmpty() || tbProcesadorEQ.getText().isEmpty() || tbMemoriaEQ.getText().isEmpty() || tbAlmacenamientoEQ.getText().isEmpty() || tbTarjetaMadreEQ.getText().isEmpty() || tbSistemaOperativoEQ.getText().isEmpty() || tbGabineteEQ.getText().isEmpty()) {
+            Alerta.crearAlertaError("Error", "Campos vacíos", "Debe llenar todos los campos para continuar.").showAndWait();
             return false;
         }
+        return true;
     }
+
 
     void regresarVentana() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/EquiposComputo.fxml"));

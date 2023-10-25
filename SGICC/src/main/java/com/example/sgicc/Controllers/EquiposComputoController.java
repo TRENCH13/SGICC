@@ -85,23 +85,29 @@ public class EquiposComputoController {
 
     @FXML
     void btnEditar(ActionEvent event) throws IOException {
-        Stage stage = (Stage) tvEquiposComputo.getScene().getWindow();
-        Scene scene = stage.getScene();
-        AnchorPane apVistaMenuCC = (AnchorPane) scene.lookup("#apVistaMenuCC");
 
-        FXMLLoader fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/RegistrarEditarEquipoComputo.fxml"));
-        Parent root = fxmlLoader.load();
+        if (!tvEquiposComputo.getSelectionModel().isEmpty()){
+            Stage stage = (Stage) tvEquiposComputo.getScene().getWindow();
+            Scene scene = stage.getScene();
+            AnchorPane apVistaMenuCC = (AnchorPane) scene.lookup("#apVistaMenuCC");
 
-        RegistrarEditarEquipoComputoController ventanaRegistrarEditarEC = fxmlLoader.getController();
-        ventanaRegistrarEditarEC.lbTítulo.setText("Editar Equipo de Cómputo");
-        ventanaRegistrarEditarEC.esEdicion = true;
-        ventanaRegistrarEditarEC.rolActual = rolActual;
-        ventanaRegistrarEditarEC.idCentroComputo = idCentroComputo;
-        ventanaRegistrarEditarEC.btnRegistrarEditar.setText("Registrar Equipo de Cómputo");
-        ventanaRegistrarEditarEC.setEdicion(tvEquiposComputo.getSelectionModel().getSelectedItem());
-        ventanaRegistrarEditarEC.equipoEditar = tvEquiposComputo.getSelectionModel().getSelectedItem();
+            FXMLLoader fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/RegistrarEditarEquipoComputo.fxml"));
+            Parent root = fxmlLoader.load();
 
-        apVistaMenuCC.getChildren().setAll(root);
+            RegistrarEditarEquipoComputoController ventanaRegistrarEditarEC = fxmlLoader.getController();
+            ventanaRegistrarEditarEC.lbTítulo.setText("Editar Equipo de Cómputo");
+            ventanaRegistrarEditarEC.esEdicion = true;
+            ventanaRegistrarEditarEC.rolActual = rolActual;
+            ventanaRegistrarEditarEC.idCentroComputo = idCentroComputo;
+            ventanaRegistrarEditarEC.btnRegistrarEditar.setText("Registrar Equipo de Cómputo");
+            ventanaRegistrarEditarEC.setEdicion(tvEquiposComputo.getSelectionModel().getSelectedItem());
+            ventanaRegistrarEditarEC.equipoEditar = tvEquiposComputo.getSelectionModel().getSelectedItem();
+
+            apVistaMenuCC.getChildren().setAll(root);
+        } else {
+            Alerta.crearAlertaError("Error", "Error al editar el equipo de cómputo.", "Debes seleccionar el equipo de cómputo que deseas editar.").showAndWait();
+        }
+
     }
 
     @FXML
