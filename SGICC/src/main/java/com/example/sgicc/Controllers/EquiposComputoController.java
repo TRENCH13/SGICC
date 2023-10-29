@@ -99,7 +99,7 @@ public class EquiposComputoController {
             ventanaRegistrarEditarEC.esEdicion = true;
             ventanaRegistrarEditarEC.rolActual = rolActual;
             ventanaRegistrarEditarEC.idCentroComputo = idCentroComputo;
-            ventanaRegistrarEditarEC.btnRegistrarEditar.setText("Registrar Equipo de Cómputo");
+            ventanaRegistrarEditarEC.btnRegistrarEditar.setText("Editar Equipo de Cómputo");
             ventanaRegistrarEditarEC.setEdicion(tvEquiposComputo.getSelectionModel().getSelectedItem());
             ventanaRegistrarEditarEC.equipoEditar = tvEquiposComputo.getSelectionModel().getSelectedItem();
 
@@ -125,7 +125,6 @@ public class EquiposComputoController {
         ventanaRegistrarEditarEC.rolActual = rolActual;
         ventanaRegistrarEditarEC.idCentroComputo = idCentroComputo;
         ventanaRegistrarEditarEC.btnRegistrarEditar.setText("Registrar Equipo de Cómputo");
-        ventanaRegistrarEditarEC.equipoEditar = tvEquiposComputo.getSelectionModel().getSelectedItem();
 
         apVistaMenuCC.getChildren().setAll(root);
     }
@@ -136,7 +135,6 @@ public class EquiposComputoController {
         tvEquiposComputo.setItems(null);
 
         List<EquipoComputo> equiposTabla = EquipoComputoDAO.consultarEquiposComputo(idCentroComputo);
-
 
         tcSistemaOperativo.setCellValueFactory(new PropertyValueFactory<>("sistemaOperativo"));
         tcAlmacenamiento.setCellValueFactory(new PropertyValueFactory<>("almacenamiento"));

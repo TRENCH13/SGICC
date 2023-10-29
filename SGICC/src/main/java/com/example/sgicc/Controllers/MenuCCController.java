@@ -70,6 +70,16 @@ public class MenuCCController {
     void btnPerifericos(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/Perifericos.fxml"));
         Parent root = fxmlLoader.load();
+        PerifericosController ventanaPerifericos = fxmlLoader.getController();
+        ventanaPerifericos.rolActual = rolActual;
+        ventanaPerifericos.llenarTabla(idCentroComputo);
+
+        if (rolActual != 1){
+            ventanaPerifericos.btnAgregar.setVisible(false);
+            ventanaPerifericos.btnEditar.setVisible(false);
+            ventanaPerifericos.btnEliminar.setVisible(false);
+        }
+
         apVistaMenuCC.getChildren().setAll(root);
         refrescarBotones();
         btnPerifericos.setStyle("-fx-background-color: #173562; -fx-border-width: 0; -fx-padding: 0 0 0 -130;");

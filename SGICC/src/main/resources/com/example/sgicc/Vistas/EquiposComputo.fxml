@@ -15,7 +15,7 @@
                <Font size="24.0" />
            </font>
        </Label>
-       <TableView fx:id="tvEquiposComputo" layoutY="88.0" prefHeight="567.0" prefWidth="783.0" style="-fx-background-color: white; -fx-border-radius: 0;" stylesheets="@tableview.css">
+       <TableView fx:id="tvEquiposComputo" editable="true" layoutY="88.0" prefHeight="567.0" prefWidth="783.0" style="-fx-background-color: white; -fx-border-radius: 0;" stylesheets="@tableview.css">
            <columns>
                <TableColumn fx:id="tcCodigo" prefWidth="70.0" text="Código" />
                <TableColumn fx:id="tcProcesador" prefWidth="95.0" text="Procesador" />

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
-
 <?import javafx.scene.text.Font?>
+
 <AnchorPane prefHeight="723.0" prefWidth="783.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sgicc.Controllers.PerifericosController">
     <children>
         <Label layoutX="23.0" layoutY="25.0" text="Sistema de Gestión de Centros de Cómputo" textFill="#295ba5">
@@ -15,16 +15,13 @@
                 <Font size="24.0" />
             </font>
         </Label>
-        <TableView fx:id="tvEquiposComputo" layoutY="88.0" prefHeight="567.0" prefWidth="783.0" style="-fx-background-color: white; -fx-border-radius: 0;" stylesheets="@tableview.css">
+        <TableView fx:id="tvPerifericos" layoutY="88.0" prefHeight="567.0" prefWidth="783.0" style="-fx-background-color: white; -fx-border-radius: 0;" stylesheets="@tableview.css">
             <columns>
                 <TableColumn fx:id="tcCodigo" prefWidth="70.0" text="Código" />
-                <TableColumn fx:id="tcProcesador" prefWidth="95.0" text="Procesador" />
-                <TableColumn fx:id="tcMemoria" prefWidth="80.0" text="Memoria" />
-                <TableColumn fx:id="tcAlmacenamiento" prefWidth="130.0" text="Almacenamiento" />
-                <TableColumn fx:id="tcTarjetaMadre" prefWidth="110.0" text="Tarjeta Madre" />
-                <TableColumn fx:id="tcGabinete" prefWidth="94.0" text="Gabinete" />
-                <TableColumn fx:id="tcSistemaOperativo" prefWidth="130.0" text="Sistema Operativo" />
-                <TableColumn fx:id="tcEstado" prefWidth="72.0" text="Estado" />
+                <TableColumn fx:id="tcTipo" prefWidth="112.0" text="Tipo" />
+                <TableColumn fx:id="tcNombre" prefWidth="223.0" text="Nombre" />
+                <TableColumn fx:id="tcEspecificaciones" prefWidth="270.0" text="Especificaciones" />
+                <TableColumn fx:id="tcEstado" prefWidth="104.0" text="Estado" />
             </columns>
         </TableView>
         <Button fx:id="btnEliminar" layoutX="689.0" layoutY="676.0" mnemonicParsing="false" onAction="#btnEliminar" text="Eliminar">
@@ -41,7 +38,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button fx:id="btnEditar" layoutX="604.0" layoutY="676.0" mnemonicParsing="false" onAction="#btnEditar" text="Editar">
+        <Button fx:id="btnEditar" layoutX="606.0" layoutY="676.0" mnemonicParsing="false" onAction="#btnEditar" text="Editar">
             <style>
                 -fx-background-color: white;
                 -fx-border-color: black;
@@ -55,7 +52,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button fx:id="btnAgregar" layoutX="309.0" layoutY="676.0" mnemonicParsing="false" onAction="#btnAgregar" text="Agregar nuevo Equipo de Cómputo">
+        <Button fx:id="btnAgregar" layoutX="387.0" layoutY="676.0" mnemonicParsing="false" onAction="#btnAgregar" text="Agregar nuevo Periferico">
             <style>
                 -fx-background-color: white;
                 -fx-border-color: black;

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="723.0" prefWidth="783.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sgicc.Controllers.RegistrarEditarPerifericoController">
+   <children>
+      <Label layoutX="23.0" layoutY="25.0" text="Sistema de Gestión de Centros de Cómputo" textFill="#295ba5">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbTítulo" layoutX="57.0" layoutY="95.0" text="título">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Line endX="570.0" layoutX="160.0" layoutY="175.0" startX="-100.0" />
+      <Label layoutX="60.0" layoutY="220.0" text="Código:">
+         <font>
+            <Font size="27.0" />
+         </font></Label>
+      <Label layoutX="60.0" layoutY="288.33" text="Tipo:">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tbCodigo" layoutX="301.0" layoutY="218.0" prefHeight="44.0" prefWidth="430.0" promptText="Ej: COD001">
+         <style>
+            -fx-background-radius: 20;
+         </style>
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tbNombre" layoutX="301.0" layoutY="354.0" prefHeight="44.0" prefWidth="430.0" promptText="Ej: Logitech G502">
+         <style>
+            -fx-background-radius: 20;
+         </style>
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btnRegistrarEditar" layoutX="412.0" layoutY="670.0" mnemonicParsing="false" onAction="#btnRegistrarEditar" prefHeight="33.0" prefWidth="241.0" text="texto">
+         <style>
+            -fx-background-color: #4FA759;
+            -fx-background-radius: 8;
+            -fx-text-fill: white;
+         </style>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="677.0" layoutY="670.0" mnemonicParsing="false" onAction="#btnRegresar" text="Regresar">
+         <style>
+            -fx-background-color: white;
+            -fx-border-color: black;
+            -fx-background-radius: 8;
+            -fx-border-radius: 8;
+         </style>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="60.0" layoutY="356.66" text="Nombre:">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="54.0" layoutY="425.0" text="Especificaciones:">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="taEspecificaciones" layoutX="305.0" layoutY="436.0" prefHeight="179.0" prefWidth="430.0" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font></TextArea>
+      <ComboBox fx:id="cbTipo" layoutX="301.0" layoutY="286.0" prefHeight="44.0" prefWidth="430.0" promptText="Selecciona una Opcion" stylesheets="@combobox.css">
+         <style>
+            -fx-background-color: white;
+            -fx-border-color: BFBFBF;
+            -fx-background-radius: 20;
+            -fx-border-radius: 20;
+         </style>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+   </children>
+</Pane>
