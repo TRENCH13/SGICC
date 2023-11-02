@@ -6,9 +6,157 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.Line?>
+<AnchorPane prefHeight="723.0" prefWidth="783.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sgicc.Controllers.SeleccionarComponentesController">
+    <children>
+        <Label layoutX="23.0" layoutY="25.0" text="Sistema de Gestión de Centros de Cómputo" textFill="#295ba5">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbTítulo" layoutX="57.0" layoutY="95.0" text="título">
+            <font>
+                <Font size="48.0" />
+            </font>
+        </Label>
+        <Line endX="570.0" layoutX="160.0" layoutY="175.0" startX="-100.0" />
+        <Label layoutX="60.0" layoutY="183.0" prefHeight="32.0" prefWidth="671.0" text="Seleccione los equipos de cómputo que estarán en mantenimiento o no">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Label>
+        <Label layoutX="59.0" layoutY="215.0" prefHeight="32.0" prefWidth="671.0" text="disponibles (Si no desea seleccionar uno, dé clic en 'Registrar').">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Label>
+        <TableView fx:id="tvEquiposComputo" layoutX="57.0" layoutY="288.0" prefHeight="148.0" prefWidth="284.0" style="-fx-background-color: white; -fx-border-radius: 0;" stylesheets="@tableview.css">
+            <columns>
+                <TableColumn fx:id="tcCodigo" prefWidth="103.0" text="Código" />
+                <TableColumn fx:id="tcEstadoEC" prefWidth="180.0" text="Estado" />
+            </columns>
+        </TableView>
+        <TableView fx:id="tvPerifericos" layoutX="57.0" layoutY="491.0" prefHeight="148.0" prefWidth="284.0" style="-fx-background-color: white; -fx-border-radius: 0;" stylesheets="@tableview.css">
+            <columns>
+                <TableColumn fx:id="tcNombre" prefWidth="103.0" text="Nombre" />
+                <TableColumn fx:id="tcEstadoPeriferico" prefWidth="180.0" text="Estado" />
+            </columns>
+        </TableView>
+        <TableView fx:id="tvEquiposComputoSeleccionados" layoutX="446.0" layoutY="288.0" prefHeight="148.0" prefWidth="284.0" style="-fx-background-color: white; -fx-border-radius: 0;" stylesheets="@tableview.css">
+            <columns>
+                <TableColumn fx:id="tcCodigoSelec" prefWidth="103.0" text="Código" />
+                <TableColumn fx:id="tcEstadoECSelec" prefWidth="180.0" text="Estado" />
+            </columns>
+        </TableView>
+        <TableView fx:id="tvPerifericosSeleccionados" layoutX="446.0" layoutY="491.0" prefHeight="148.0" prefWidth="284.0" style="-fx-background-color: white; -fx-border-radius: 0;" stylesheets="@tableview.css">
+            <columns>
+                <TableColumn fx:id="tcNombreSelec" prefWidth="103.0" text="Nombre" />
+                <TableColumn fx:id="tcEstadoPerifericoSelec" prefWidth="180.0" text="Estado" />
+            </columns>
+        </TableView>
+        <Button fx:id="btnRegistrar" layoutX="412.0" layoutY="670.0" mnemonicParsing="false" onAction="#btnRegistrar" prefHeight="33.0" prefWidth="241.0" text="Registrar">
+            <style>
+                -fx-background-color: #4FA759;
+                -fx-background-radius: 8;
+                -fx-text-fill: white;
+            </style>
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button layoutX="677.0" layoutY="670.0" mnemonicParsing="false" onAction="#btnRegresar" text="Regresar">
+            <style>
+                -fx-background-color: white;
+                -fx-border-color: black;
+                -fx-background-radius: 8;
+                -fx-border-radius: 8;
+            </style>
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Label layoutX="57.0" layoutY="256.0" prefHeight="32.0" prefWidth="174.0" text="Equipos de cómputo:">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="57.0" layoutY="459.0" prefHeight="32.0" prefWidth="174.0" text="Periféricos:">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="446.0" layoutY="459.0" prefHeight="32.0" prefWidth="208.0" text="Periféricos seleccionados:">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="446.0" layoutY="256.0" prefHeight="32.0" prefWidth="284.0" text="Equipos de cómputo seleccionados:">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Button layoutX="376.0" layoutY="327.0" mnemonicParsing="false" onAction="#btnSeleccionarEC" text="-&gt;">
+            <style>
+                -fx-background-color: white;
+                -fx-border-color: black;
+                -fx-background-radius: 8;
+                -fx-border-radius: 8;
+            </style>
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button layoutX="376.0" layoutY="365.0" mnemonicParsing="false" onAction="#btnQuitarEC" text="&lt;-">
+            <style>
+                -fx-background-color: white;
+                -fx-border-color: black;
+                -fx-background-radius: 8;
+                -fx-border-radius: 8;
+            </style>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Button>
+        <Button layoutX="377.0" layoutY="569.0" mnemonicParsing="false" onAction="#btnQuitarP" text="&lt;-">
+            <style>
+                -fx-background-color: white;
+                -fx-border-color: black;
+                -fx-background-radius: 8;
+                -fx-border-radius: 8;
+            </style>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Button>
+        <Button layoutX="377.0" layoutY="531.0" mnemonicParsing="false" onAction="#btnSeleccionarP" text="-&gt;">
+            <style>
+                -fx-background-color: white;
+                -fx-border-color: black;
+                -fx-background-radius: 8;
+                -fx-border-radius: 8;
+            </style>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Button>
+    </children>
 </AnchorPane>

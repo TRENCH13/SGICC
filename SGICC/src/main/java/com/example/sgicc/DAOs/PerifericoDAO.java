@@ -129,4 +129,30 @@ public class PerifericoDAO {
         }
     }
 
+    public static boolean cambiarEstadoPeriferico(int idPeriferico, String estado) {
+        ConexionBD conexionSQL = ConexionBD.getInstance();
+        Connection conexionBD = conexionSQL.getConexion();
+        boolean modificacionExistosa = false;
+
+        try {
+            String consultaSQL = "UPDATE periferico SET estado = ? WHERE idPeriferico = ?";
+            PreparedStatement statement = conexionBD.prepareStatement(consultaSQL);
+            statement.setString(1, estado);
+            statement.setInt(2, idPeriferico);
+
+            int filasAfectadas = statement.executeUpdate();
+
+            if (filasAfectadas > 0) {
+                modificacionExistosa = true;
+            }
+
+            statement.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return modificacionExistosa;
+    }
+
 }

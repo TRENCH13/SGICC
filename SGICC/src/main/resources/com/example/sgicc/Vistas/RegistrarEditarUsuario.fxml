@@ -6,9 +6,133 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
-</AnchorPane>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sgicc.Controllers.RegistrarEditarUsuarioController">
+    <children>
+        <Label layoutX="23.0" layoutY="25.0" text="Sistema de Gestión de Centros de Cómputo" textFill="#295ba5">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbTítulo" layoutX="57.0" layoutY="95.0" text="título">
+            <font>
+                <Font size="48.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="723.0" prefHeight="47.0" prefWidth="1080.0" style="-fx-background-color: #295BA5;" text="Universidad Veracruzana" textFill="WHITE">
+            <font>
+                <Font size="24.0" />
+            </font></Label>
+        <Line endX="850.0" layoutX="160.0" layoutY="175.0" startX="-100.0" />
+        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1030.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Recursos/Logo-UV.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="lbUser" alignment="CENTER_RIGHT" layoutX="577.0" layoutY="28.0" prefHeight="30.0" prefWidth="400.0" text="User">
+            <font>
+                <Font size="20.0" />
+            </font></Label>
+        <Label layoutX="116.0" layoutY="230.0" text="Nombre:">
+            <font>
+                <Font size="27.0" />
+            </font></Label>
+        <Label layoutX="116.0" layoutY="295.0" text="Apellido:">
+            <font>
+                <Font size="27.0" />
+            </font>
+        </Label>
+        <TextField fx:id="tbNombre" layoutX="271.0" layoutY="228.0" prefHeight="44.0" prefWidth="689.0" promptText="Ej: Saul Isidro">
+            <style>
+                -fx-background-radius: 20;
+            </style>
+            <font>
+                <Font size="20.0" />
+            </font>
+        </TextField>
+        <TextField fx:id="tbApellido" layoutX="271.0" layoutY="293.0" prefHeight="44.0" prefWidth="689.0" promptText="Ej: Dominguez">
+            <style>
+                -fx-background-radius: 20;
+            </style>
+            <font>
+                <Font size="20.0" />
+            </font>
+        </TextField>
+        <Button fx:id="btnRegistrarEditar" layoutX="561.0" layoutY="650.0" mnemonicParsing="false" onAction="#btnRegistrarEditar" prefHeight="40.0" prefWidth="300.0" text="Registrar usuario">
+            <style>
+                -fx-background-color: #4FA759;
+                -fx-background-radius: 8;
+                -fx-text-fill: white;
+            </style>
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button layoutX="914.0" layoutY="650.0" mnemonicParsing="false" onAction="#btnRegresar" text="Regresar">
+            <style>
+                -fx-background-color: white;
+                -fx-border-color: black;
+                -fx-background-radius: 8;
+                -fx-border-radius: 8;
+            </style>
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Label layoutX="116.0" layoutY="361.0" text="Correo institucional:">
+            <font>
+                <Font size="27.0" />
+            </font>
+        </Label>
+        <TextField fx:id="tbCorreoInstitucional" layoutX="405.0" layoutY="359.0" prefHeight="44.0" prefWidth="555.0" promptText="Ej: sauldominguez@uv.mx" style="&#10;-fx-background-radius: 20;&#10;">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </TextField>
+        <Label layoutX="116.0" layoutY="427.0" text="Numero personal:">
+            <font>
+                <Font size="27.0" />
+            </font>
+        </Label>
+        <TextField fx:id="tbNumeroPersonal" layoutX="405.0" layoutY="424.0" prefHeight="44.0" prefWidth="555.0" promptText="Ej: SUV910357" style="&#10; -fx-background-radius: 20;&#10;">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </TextField>
+        <Label layoutX="116.0" layoutY="491.0" text="Contraseña:">
+            <font>
+                <Font size="27.0" />
+            </font>
+        </Label>
+        <PasswordField fx:id="tbPassword" layoutX="271.0" layoutY="488.0" prefHeight="44.0" prefWidth="689.0" promptText="Ej: sdom_usrCC1" style="&#10; -fx-background-radius: 20;&#10;">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </PasswordField>
+        <Label layoutX="116.0" layoutY="555.0" text="Rol/Cargo:">
+            <font>
+                <Font size="27.0" />
+            </font>
+        </Label>
+        <ComboBox fx:id="cbRol" layoutX="271.0" layoutY="553.0" prefHeight="44.0" prefWidth="689.0" promptText="Seleccionar rol/cargo"  stylesheets="@combobox.css">
+            <style>
+                -fx-background-color: white;
+                -fx-border-color: BFBFBF;
+                -fx-background-radius: 20;
+                -fx-border-radius: 20;
+            </style>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </ComboBox>
+    </children>
+</Pane>

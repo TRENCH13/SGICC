@@ -89,6 +89,12 @@ public class MenuCCController {
     void btnBitacora(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/Bitacora.fxml"));
         Parent root = fxmlLoader.load();
+
+        BitacoraController bitacoraController = fxmlLoader.getController();
+        bitacoraController.rolActual = rolActual;
+        bitacoraController.llenarTabla(idCentroComputo);
+        bitacoraController.inicializarBusquedaBitacoras();
+
         apVistaMenuCC.getChildren().setAll(root);
         refrescarBotones();
         btnBitacora.setStyle("-fx-background-color: #173562; -fx-border-width: 0; -fx-padding: 0 0 0 -145;");

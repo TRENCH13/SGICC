@@ -6,9 +6,32 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="302.0" prefWidth="399.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sgicc.Controllers.SeleccionarNuevoEstadoController">
+    <children>
+        <ComboBox fx:id="cbNuevoEstado" layoutX="41.0" layoutY="107.0" prefHeight="46.0" prefWidth="318.0" promptText="Selecciona un nuevo estado" stylesheets="@combobox.css">
+            <style>
+                -fx-background-color: white;
+                -fx-border-color: BFBFBF;
+                -fx-background-radius: 20;
+                -fx-border-radius: 20;
+            </style>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </ComboBox>
+        <Button fx:id="btnAceptar" layoutX="79.0" layoutY="165.0" mnemonicParsing="false" onAction="#btnAceptar" prefHeight="33.0" prefWidth="241.0" text="Aceptar">
+            <style>
+                -fx-background-color: #4FA759;
+                -fx-background-radius: 8;
+                -fx-text-fill: white;
+            </style>
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+    </children>
 </AnchorPane>

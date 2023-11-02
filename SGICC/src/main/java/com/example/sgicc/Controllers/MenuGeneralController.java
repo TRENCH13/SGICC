@@ -236,8 +236,21 @@ public class MenuGeneralController {
     }
 
     @FXML
-    void btnUsuarios(ActionEvent event) {
-
+    void btnUsuarios(ActionEvent event) throws IOException{
+        Stage stage = (Stage) lbUser.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/ConsultarUsuario.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        ConsultarUsuarioController consultarUsuarioController = fxmlLoader.getController();
+        consultarUsuarioController.btnAgregar.setText("Agregar nuevo Usuario");
+        consultarUsuarioController.lbUser.setText(lbUser.getText());
+        consultarUsuarioController.lbTítulo.setText("Usuarios");
+        consultarUsuarioController.setIdRol(rolActual);
+        consultarUsuarioController.llenarTabla();
+        stage.setTitle("Usuarios");
+        stage.getIcons().add(new Image(IniciadorAplicacion.class.getResource("/com/example/sgicc/Recursos/icono_UV.png").toExternalForm()));
+        stage.show();
     }
 
     @FXML

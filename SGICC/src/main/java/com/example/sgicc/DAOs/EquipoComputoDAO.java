@@ -135,4 +135,30 @@ public class EquipoComputoDAO {
             e.printStackTrace();
         }
     }
+
+    public static boolean cambiarEstadoEquipoComputo(int idEquipoComputo, String estado) {
+        ConexionBD conexionSQL = ConexionBD.getInstance();
+        Connection conexionBD = conexionSQL.getConexion();
+        boolean modificacionExistosa = false;
+
+        try {
+            String consultaSQL = "UPDATE equipocomputo SET estado = ? WHERE idEquipoComputo = ?";
+            PreparedStatement statement = conexionBD.prepareStatement(consultaSQL);
+            statement.setString(1, estado);
+            statement.setInt(2, idEquipoComputo);
+
+            int filasAfectadas = statement.executeUpdate();
+
+            if (filasAfectadas > 0) {
+                modificacionExistosa = true;
+            }
+
+            statement.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return modificacionExistosa;
+    }
 }

@@ -6,9 +6,102 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sgicc.Controllers.ConsultarUsuarioController">
 
-</AnchorPane>
+    <children>
+        <Label layoutX="23.0" layoutY="25.0" text="Sistema de Gestión de Centros de Cómputo" textFill="#295ba5">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbTítulo" layoutX="57.0" layoutY="95.0" text="título">
+            <font>
+                <Font size="48.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="723.0" prefHeight="47.0" prefWidth="1080.0" style="-fx-background-color: #295BA5;" text="Universidad Veracruzana" textFill="WHITE">
+            <font>
+                <Font size="24.0" />
+            </font></Label>
+        <Line endX="850.0" layoutX="160.0" layoutY="175.0" startX="-100.0" />
+        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1030.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Recursos/Logo-UV.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="lbUser" alignment="CENTER_RIGHT" layoutX="577.0" layoutY="28.0" prefHeight="30.0" prefWidth="400.0" text="User">
+            <font>
+                <Font size="20.0" />
+            </font></Label>
+        <Button layoutX="898.0" layoutY="651.0" mnemonicParsing="false" onAction="#btnRegresar" text="Regresar">
+            <style>
+                -fx-background-color: white;
+                -fx-border-color: black;
+                -fx-background-radius: 8;
+                -fx-border-radius: 8;
+            </style>
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button fx:id="btnEliminar" layoutX="773.0" layoutY="651.0" mnemonicParsing="false" onAction="#btnEliminar" text="Eliminar">
+            <style>
+                -fx-background-color: white;
+                -fx-border-color: black;
+                -fx-background-radius: 8;
+                -fx-border-radius: 8;
+            </style>
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button fx:id="btnEditar" layoutX="670.0" layoutY="651.0" mnemonicParsing="false" onAction="#btnEditar" text="Editar">
+            <style>
+                -fx-background-color: white;
+                -fx-border-color: black;
+                -fx-background-radius: 8;
+                -fx-border-radius: 8;
+            </style>
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button fx:id="btnAgregar" layoutX="405.0" layoutY="651.0" mnemonicParsing="false" onAction="#btnAgregar" text="Agregar nuevo Usuario">
+            <style>
+                -fx-background-color: white;
+                -fx-border-color: black;
+                -fx-background-radius: 8;
+                -fx-border-radius: 8;
+            </style>
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <TableView fx:id="tvUsuarios" layoutX="60.0" layoutY="212.0" prefHeight="404.0" prefWidth="951.0" style="-fx-background-color: white; -fx-border-radius: 0;" stylesheets="@tableview.css">
+            <columns>
+                <TableColumn fx:id="tcNombre" prefWidth="210.0" text="Nombre" />
+                <TableColumn fx:id="tcApellido" minWidth="0.0" prefWidth="208.0" text="Apellido" />
+                <TableColumn fx:id="tcCorreoInstitucional" prefWidth="215.0" text="Correo institucional" />
+                <TableColumn fx:id="tcNumeroPersonal" prefWidth="182.0" text="Número de personal" />
+                <TableColumn fx:id="tcRol" prefWidth="135.0" text="Rol/Cargo" />
+            </columns>
+        </TableView>
+    </children>
+
+</Pane>

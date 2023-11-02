@@ -7,6 +7,41 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane prefHeight="723.0" prefWidth="783.0" style="-fx-background-color: blue;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sgicc.Controllers.EquiposComputoController">
-
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="723.0" prefWidth="783.0" style="-fx-background-color: white;"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.sgicc.Controllers.BitacoraController">
+    <children>
+        <Label layoutX="23.0" layoutY="25.0" text="Sistema de Gestión de Centros de Cómputo" textFill="#295ba5">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <TextField fx:id="tbBusqueda" layoutX="23.0" layoutY="76.0" prefHeight="44.0" prefWidth="736.0" promptText="Escribe el título de una bitácora para buscar." style="&#10; -fx-background-radius: 20;&#10;">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </TextField>
+        <TableView fx:id="tvBitacoras" layoutY="143.0" prefHeight="512.0" prefWidth="783.0" style="-fx-background-color: white; -fx-border-radius: 0;" stylesheets="@tableview.css">
+            <columns>
+                <TableColumn fx:id="tcTitulo" prefWidth="325.0" text="Título" />
+                <TableColumn fx:id="tcReporteBitacora" prefWidth="327.0" text="Descripción" />
+                <TableColumn fx:id="tcFechaRegistro" prefWidth="130.0" text="Fecha de registro" />
+            </columns>
+        </TableView>
+        <Button fx:id="btnAgregar" layoutX="321.0" layoutY="676.0" mnemonicParsing="false" onAction="#btnAgregar" text="Agregar Bitácora">
+            <style>
+                -fx-background-color: white;
+                -fx-border-color: black;
+                -fx-background-radius: 8;
+                -fx-border-radius: 8;
+            </style>
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+    </children>
 </AnchorPane>
