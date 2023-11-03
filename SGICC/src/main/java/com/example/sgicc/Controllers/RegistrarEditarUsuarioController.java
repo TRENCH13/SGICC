@@ -107,13 +107,21 @@ public class RegistrarEditarUsuarioController {
     }
 
     public void setEdicion(){
-        String rol;
-
         tbNombre.setText(usuarioEdicion.getNombre());
         tbApellido.setText(usuarioEdicion.getApellido());
         tbCorreoInstitucional.setText(usuarioEdicion.getCorreoInstitucional());
-        tbNumeroPersonal.setText(usuarioEdicion.getNumPersonal());;
-        tbPassword.setText(usuarioEdicion.getContrasenia());;
+        tbNumeroPersonal.setText(usuarioEdicion.getNumPersonal());
+        tbPassword.setText(usuarioEdicion.getContrasenia());
+
+        int idRolToSelect = usuarioEdicion.getIdRol();
+        int selectedIndex = -1;
+        for (int i = 0; i < cbRol.getItems().size(); i++) {
+            if ( ((Rol) cbRol.getItems().get(i)).getIdRol() == idRolToSelect) {
+                selectedIndex = i;
+                break;
+            }
+        }
+        cbRol.getSelectionModel().select(selectedIndex);
     }
 
     public void llenarComboBox() {

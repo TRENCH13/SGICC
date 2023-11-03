@@ -78,8 +78,8 @@ public class ConsultarUsuarioController {
             usuarioController.setEsEdicion(true);
             usuarioController.btnRegistrarEditar.setText("Editar Usuario");
             usuarioController.usuarioEdicion = (Usuario) tvUsuarios.getSelectionModel().getSelectedItem();
-            usuarioController.setEdicion();
             usuarioController.llenarComboBox();
+            usuarioController.setEdicion();
             stage.setTitle("Editar Usuario");
             stage.getIcons().add(new Image(IniciadorAplicacion.class.getResource("/com/example/sgicc/Recursos/icono_UV.png").toExternalForm()));
             stage.show();

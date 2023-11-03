@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
+
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sgicc.Controllers.RegistrarEditarUsuarioController">
     <children>
         <Label layoutX="23.0" layoutY="25.0" text="Sistema de Gestión de Centros de Cómputo" textFill="#295ba5">
@@ -45,7 +48,7 @@
                 <Font size="27.0" />
             </font>
         </Label>
-        <TextField fx:id="tbNombre" layoutX="271.0" layoutY="228.0" prefHeight="44.0" prefWidth="689.0" promptText="Ej: Saul Isidro">
+        <TextField fx:id="tbNombre" layoutX="390.0" layoutY="228.0" prefHeight="44.0" prefWidth="570.0" promptText="Ej: Saul Isidro">
             <style>
                 -fx-background-radius: 20;
             </style>
@@ -53,7 +56,7 @@
                 <Font size="20.0" />
             </font>
         </TextField>
-        <TextField fx:id="tbApellido" layoutX="271.0" layoutY="293.0" prefHeight="44.0" prefWidth="689.0" promptText="Ej: Dominguez">
+        <TextField fx:id="tbApellido" layoutX="390.0" layoutY="293.0" prefHeight="44.0" prefWidth="570.0" promptText="Ej: Dominguez">
             <style>
                 -fx-background-radius: 20;
             </style>
@@ -93,7 +96,7 @@
                 <Font size="27.0" />
             </font>
         </Label>
-        <TextField fx:id="tbCorreoInstitucional" layoutX="405.0" layoutY="359.0" prefHeight="44.0" prefWidth="555.0" promptText="Ej: sauldominguez@uv.mx" style="&#10;-fx-background-radius: 20;&#10;">
+        <TextField fx:id="tbCorreoInstitucional" layoutX="390.0" layoutY="359.0" prefHeight="44.0" prefWidth="570.0" promptText="Ej: sauldominguez@uv.mx" style="&#10;-fx-background-radius: 20;&#10;">
             <font>
                 <Font size="20.0" />
             </font>
@@ -103,7 +106,7 @@
                 <Font size="27.0" />
             </font>
         </Label>
-        <TextField fx:id="tbNumeroPersonal" layoutX="405.0" layoutY="424.0" prefHeight="44.0" prefWidth="555.0" promptText="Ej: SUV910357" style="&#10; -fx-background-radius: 20;&#10;">
+        <TextField fx:id="tbNumeroPersonal" layoutX="390.0" layoutY="424.0" prefHeight="44.0" prefWidth="570.0" promptText="Ej: SUV910357" style="&#10; -fx-background-radius: 20;&#10;">
             <font>
                 <Font size="20.0" />
             </font>
@@ -113,7 +116,7 @@
                 <Font size="27.0" />
             </font>
         </Label>
-        <PasswordField fx:id="tbPassword" layoutX="271.0" layoutY="488.0" prefHeight="44.0" prefWidth="689.0" promptText="Ej: sdom_usrCC1" style="&#10; -fx-background-radius: 20;&#10;">
+        <PasswordField fx:id="tbPassword" layoutX="390.0" layoutY="488.0" prefHeight="44.0" prefWidth="570.0" promptText="Ej: sdom_usrCC1" style="&#10; -fx-background-radius: 20;&#10;">
             <font>
                 <Font size="20.0" />
             </font>
@@ -123,7 +126,7 @@
                 <Font size="27.0" />
             </font>
         </Label>
-        <ComboBox fx:id="cbRol" layoutX="271.0" layoutY="553.0" prefHeight="44.0" prefWidth="689.0" promptText="Seleccionar rol/cargo"  stylesheets="@combobox.css">
+        <ComboBox fx:id="cbRol" layoutX="390.0" layoutY="553.0" prefHeight="46.0" prefWidth="570.0" promptText="Seleccionar rol/cargo" stylesheets="@combobox.css">
             <style>
                 -fx-background-color: white;
                 -fx-border-color: BFBFBF;
