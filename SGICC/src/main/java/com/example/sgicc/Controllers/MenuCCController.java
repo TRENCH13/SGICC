@@ -32,13 +32,10 @@ public class MenuCCController {
     private Button btnPerifericos;
 
     @FXML
-    public Button btnAsignarSoftware;
+    public Button btnSoftwareInstalado;
 
     @FXML
     private Label lbUser;
-
-    @FXML
-    private Button btnConsultarSoftware;
 
     @FXML
     private Button btnEquiposComputo;
@@ -101,21 +98,22 @@ public class MenuCCController {
     }
 
     @FXML
-    void btnAsignarSoftware(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/AsignarSoftware.fxml"));
+    void btnSoftwareInstalado(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/SoftwareInstalado.fxml"));
         Parent root = fxmlLoader.load();
-        apVistaMenuCC.getChildren().setAll(root);
-        refrescarBotones();
-        btnAsignarSoftware.setStyle("-fx-background-color: #173562; -fx-border-width: 0; -fx-padding: 0 0 0 -25;");
-    }
 
-    @FXML
-    void btnConsultarSoftware(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/ConsultarSoftware.fxml"));
-        Parent root = fxmlLoader.load();
+        SoftwareInstaladoController ventanasoftwareInstalado = fxmlLoader.getController();
+        ventanasoftwareInstalado.idCentroComputo = idCentroComputo;
+        Label mensajeVacio1 = new Label("No existen registros");
+        ventanasoftwareInstalado.tvSoftwareDisponible.setPlaceholder(mensajeVacio1);
+        Label mensajeVacio2 = new Label("No existen registros");
+        ventanasoftwareInstalado.tvSoftwareInstalado.setPlaceholder(mensajeVacio2);
+        ventanasoftwareInstalado.llenarComboBox();
+        ventanasoftwareInstalado.llenarTablaInicio();
+
         apVistaMenuCC.getChildren().setAll(root);
         refrescarBotones();
-        btnConsultarSoftware.setStyle("-fx-background-color: #173562; -fx-border-width: 0; -fx-padding: 0 0 0 -5;");
+        btnSoftwareInstalado.setStyle("-fx-background-color: #173562; -fx-border-width: 0; -fx-padding: 0 0 0 -78;");
     }
 
     @FXML
@@ -145,8 +143,7 @@ public class MenuCCController {
         btnEquiposComputo.setStyle("-fx-background-color: #295BA5; -fx-border-width: 0;-fx-padding: 0 0 0 -60;");
         btnPerifericos.setStyle("-fx-background-color: #295BA5; -fx-border-width: 0; -fx-padding: 0 0 0 -130;");
         btnBitacora.setStyle("-fx-background-color: #295BA5; -fx-border-width: 0; -fx-padding: 0 0 0 -145;");
-        btnAsignarSoftware.setStyle("-fx-background-color: #295BA5; -fx-border-width: 0; -fx-padding: 0 0 0 -25;");
-        btnConsultarSoftware.setStyle("-fx-background-color: #295BA5; -fx-border-width: 0; -fx-padding: 0 0 0 -5;");
+        btnSoftwareInstalado.setStyle("-fx-background-color: #295BA5; -fx-border-width: 0; -fx-padding: 0 0 0 -78;");
     }
 
 }

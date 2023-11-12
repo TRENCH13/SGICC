@@ -12,7 +12,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 import javafx.util.StringConverter;
 
 import java.io.IOException;
@@ -24,10 +23,14 @@ public class RegistrarEditarUsuarioController {
     public TextField tbCorreoInstitucional;
     public TextField tbNumeroPersonal;
     public PasswordField tbPassword;
-    public ComboBox cbRol;
+    public ComboBox<Rol> cbRol;
+
     public Label lbUser;
+
     public Label lbTítulo;
+
     public Button btnRegistrarEditar;
+
     public int rolActual;
     public boolean esEdicion;
     public Usuario usuarioEdicion;
@@ -90,13 +93,13 @@ public class RegistrarEditarUsuarioController {
 
     void regresarVentana() throws IOException {
         Stage stage = (Stage) tbNombre.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/ConsultarUsuario.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/Usuarios.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
-        ConsultarUsuarioController consultarUsuarioController = fxmlLoader.getController();
-        consultarUsuarioController.setIdRol(rolActual);
-        consultarUsuarioController.lbTítulo.setText("Usuarios");
-        consultarUsuarioController.llenarTabla();
+        UsuariosController usuariosController = fxmlLoader.getController();
+        usuariosController.setIdRol(rolActual);
+        usuariosController.lbTítulo.setText("Usuarios");
+        usuariosController.llenarTabla();
 
         stage.setScene(scene);
         Label lbUserNext = (Label) scene.lookup("#lbUser");
@@ -113,55 +116,33 @@ public class RegistrarEditarUsuarioController {
         tbNumeroPersonal.setText(usuarioEdicion.getNumPersonal());
         tbPassword.setText(usuarioEdicion.getContrasenia());
 
-        int idRolToSelect = usuarioEdicion.getIdRol();
-        int selectedIndex = -1;
-        for (int i = 0; i < cbRol.getItems().size(); i++) {
-            if ( ((Rol) cbRol.getItems().get(i)).getIdRol() == idRolToSelect) {
-                selectedIndex = i;
+        for (Rol item : cbRol.getItems()) {
+            if (item.getIdRol() == usuarioEdicion.getIdRol()) {
+                cbRol.setValue(item);
+                System.out.println(item);
                 break;
             }
         }
-        cbRol.getSelectionModel().select(selectedIndex);
     }
 
-    public void llenarComboBox() {
+    public void llenarComboBox(){
         List<Rol> items = UsuarioDAO.consultarRoles();
         cbRol.getItems().clear();
         cbRol.getItems().addAll(items);
 
-        StringConverter<Rol> rolStringConverter = new StringConverter<Rol>() {
+        cbRol.setConverter(new StringConverter<Rol>() {
             @Override
-            public String toString(Rol object) {
-                if (object != null) {
-                    return object.getRol();
+            public String toString(Rol rol) { return rol.getRol(); }
+
+            @Override
+            public Rol fromString(String s) {
+                for (Rol item : cbRol.getItems()) {
+                    if (item.getRol().equals(s)){
+                        return item;
+                    }
                 }
                 return null;
             }
-
-            @Override
-            public Rol fromString(String string) {
-                return null;
-            }
-        };
-
-        cbRol.setConverter(rolStringConverter);
-
-        cbRol.setCellFactory(new Callback<ListView<Rol>, ListCell<Rol>>() {
-            @Override
-            public ListCell<Rol> call(ListView<Rol> param) {
-                return new ListCell<Rol>() {
-                    @Override
-                    protected void updateItem(Rol item, boolean empty) {
-                        super.updateItem(item, empty);
-                        if (empty || item == null) {
-                            setText(null);
-                        } else {
-                            setText(item.getRol());
-                        }
-                    }
-                };
-            }
         });
-
     }
 }

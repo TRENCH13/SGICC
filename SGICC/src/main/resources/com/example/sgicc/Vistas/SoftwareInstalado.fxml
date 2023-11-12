@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane prefHeight="723.0" prefWidth="783.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sgicc.Controllers.SoftwareInstaladoController">
+    <children>
+        <Label layoutX="23.0" layoutY="25.0" text="Sistema de Gestión de Centros de Cómputo" textFill="#295ba5">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="57.0" layoutY="95.0" text="Software en Equipos de Cómputo">
+            <font>
+                <Font size="44.0" />
+            </font>
+        </Label>
+        <Line endX="570.0" layoutX="160.0" layoutY="175.0" startX="-100.0" />
+      <Label layoutX="89.0" layoutY="268.0" text="Software Disponible">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="494.0" layoutY="268.0" text="Software Instalado">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tvSoftwareDisponible" layoutX="19.0" layoutY="298.0" prefHeight="400.0" prefWidth="330.0" style="-fx-background-color: white; -fx-border-radius: 0;" stylesheets="@tableview.css">
+        <columns>
+          <TableColumn fx:id="tcNombreDisponible" prefWidth="210.0" text="Nombre" />
+          <TableColumn fx:id="tcVersionDisponible" minWidth="4.0" prefWidth="114.0" text="Versión" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tvSoftwareInstalado" layoutX="417.0" layoutY="298.0" prefHeight="400.0" prefWidth="330.0" style="-fx-background-color: white; -fx-border-radius: 0;" stylesheets="@tableview.css">
+         <columns>
+            <TableColumn fx:id="tcNombreInstalado" prefWidth="210.0" text="Nombre" />
+            <TableColumn fx:id="tcVersionInstalado" prefWidth="114.0" text="Versión" />
+         </columns>
+      </TableView>
+      <Label layoutX="58.0" layoutY="203.0" text="Equipos de Cómputo:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbEquiposComputo" layoutX="268.0" layoutY="196.0" prefHeight="44.0" prefWidth="464.0" stylesheets="@combobox.css">
+          <style>
+              -fx-background-color: white;
+              -fx-border-color: BFBFBF;
+              -fx-background-radius: 20;
+              -fx-border-radius: 20;
+          </style>
+          <cursor>
+              <Cursor fx:constant="HAND" />
+          </cursor>
+      </ComboBox>
+      <Button fx:id="btnDisponibleAInstalado" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="362.0" layoutY="463.0" mnemonicParsing="false" onAction="#btnDisponibleAInstalado" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: white;">
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Recursos/icono_flecha.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnInstaladoADisponible" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="362.0" layoutY="510.0" mnemonicParsing="false" onAction="#btnInstaladoADisponible" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: white;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" rotate="-180.0">
+               <image>
+                  <Image url="@../Recursos/icono_flecha.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+        <Button fx:id="btnGuardar" contentDisplay="TOP" graphicTextGap="1.0" layoutX="359.0" layoutY="568.0" mnemonicParsing="false" onAction="#btnGuardar" prefHeight="50.0" prefWidth="65.0" text="Guardar">
+            <style>-fx-background-color: white;</style>
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Recursos/icono_guardar.png" />
+               </image>
+            </ImageView>
+         </graphic>
+        </Button>
+    </children>
+</AnchorPane>

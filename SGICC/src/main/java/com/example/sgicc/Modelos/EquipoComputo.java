@@ -111,6 +111,11 @@ public class EquipoComputo {
         this.idCentroDeComputo = idCentroDeComputo;
     }
 
+    public String mostrarInfo() {
+        String info = "Código: " + getCodigoEquipo() + ". OS: " + getSistemaOperativo() + ". Estado: " + getEstado();
+        return info;
+    }
+
     @Override
     public String toString() {
         return "EquipoComputo{" +

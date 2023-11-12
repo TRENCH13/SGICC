@@ -24,7 +24,7 @@ import javafx.util.Callback;
 import java.io.IOException;
 import java.util.List;
 
-public class ConsultarUsuarioController {
+public class UsuariosController {
     public Button btnAgregar;
     public Label lbUser;
     public Label lbTítulo;
@@ -37,12 +37,10 @@ public class ConsultarUsuarioController {
     public TableColumn tcRol;
 
     public void btnRegresar(ActionEvent actionEvent) {
-        if (Alerta.crearAlertaConfirmacion("Regresar", "¿Está seguro de regresar?", "Seleccione 'Aceptar' para regresar al menú general.")){
-            try {
-                regresarVentana();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+        try {
+            regresarVentana();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

@@ -26,7 +26,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class SeleccionarComponentesController {
-    public Label lbTítulo;
+
     public int rolActual;
     public int idCentroComputo;
     public TableView tvEquiposComputo;
@@ -95,12 +95,11 @@ public class SeleccionarComponentesController {
         Parent root = fxmlLoader.load();
         RegistrarBitacoraController bitacoraController = fxmlLoader.getController();
         bitacoraController.rolActual = rolActual;
-        bitacoraController.lbTítulo.setText("Registrar Bitácora");
         bitacoraController.bitacoraActual = bitacoraActual;
         bitacoraController.idCentroComputo = idCentroComputo;
         bitacoraController.llenarCamposBitacoraActual();
 
-        Scene scene = lbTítulo.getScene();
+        Scene scene = tvEquiposComputo.getScene();
         AnchorPane apVistaMenuCC = (AnchorPane) scene.lookup("#apVistaMenuCC");
 
         apVistaMenuCC.getChildren().setAll(root);
@@ -115,7 +114,7 @@ public class SeleccionarComponentesController {
         bitacoraController.llenarTabla(idCentroComputo);
         bitacoraController.inicializarBusquedaBitacoras();
 
-        Scene scene = lbTítulo.getScene();
+        Scene scene = tvEquiposComputo.getScene();
         AnchorPane apVistaMenuCC = (AnchorPane) scene.lookup("#apVistaMenuCC");
 
         apVistaMenuCC.getChildren().setAll(root);

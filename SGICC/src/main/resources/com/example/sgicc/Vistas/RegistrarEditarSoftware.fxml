@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sgicc.Controllers.RegistrarEditarSoftwareController">
+   <children>
+      <Label layoutX="23.0" layoutY="25.0" text="Sistema de Gestión de Centros de Cómputo" textFill="#295ba5">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbTítulo" layoutX="57.0" layoutY="95.0" text="título">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+       <Label alignment="CENTER" contentDisplay="CENTER" layoutY="723.0" prefHeight="47.0" prefWidth="1080.0" style="-fx-background-color: #295BA5;" text="Universidad Veracruzana" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Line endX="850.0" layoutX="160.0" layoutY="175.0" startX="-100.0" />
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1030.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Recursos/Logo-UV.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lbUser" alignment="CENTER_RIGHT" layoutX="577.0" layoutY="28.0" prefHeight="30.0" prefWidth="400.0" text="User">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label layoutX="160.0" layoutY="221.0" text="Nombre:">
+         <font>
+            <Font size="27.0" />
+         </font></Label>
+      <Label layoutX="166.0" layoutY="483.0" text="Licencia:">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tbNombre" layoutX="314.0" layoutY="218.0" prefHeight="44.0" prefWidth="700.0" promptText="Ej: Microsoft Office">
+         <style>
+            -fx-background-radius: 20;
+         </style>
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tbTipoSoftware" layoutX="314.0" layoutY="393.0" prefHeight="39.0" prefWidth="700.0" promptText="Ej: Ofimática">
+         <style>
+            -fx-background-radius: 20;
+         </style>
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btnRegistrarEditar" layoutX="561.0" layoutY="650.0" mnemonicParsing="false" onAction="#btnRegistrarEditarSoftware" prefHeight="40.0" prefWidth="300.0" text="texto">
+         <style>
+            -fx-background-color: #4FA759;
+            -fx-background-radius: 8;
+            -fx-text-fill: white;
+         </style>
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="904.0" layoutY="649.0" mnemonicParsing="false" onAction="#btnRegresar" text="Regresar">
+         <style>
+            -fx-background-color: white;
+            -fx-border-color: black;
+            -fx-background-radius: 8;
+            -fx-border-radius: 8;
+         </style>
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="57.0" layoutY="395.0" text="Tipo de Software:">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="rbLicenciaSi" layoutX="314.0" layoutY="487.0" mnemonicParsing="false" text="Si">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="licenciaRadioButton" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rbLicenciaNo" layoutX="399.0" layoutY="487.0" mnemonicParsing="false" text="No" toggleGroup="$licenciaRadioButton">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </RadioButton>
+      <Label layoutX="170.0" layoutY="308.0" text="Versión:">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tbVersion" layoutX="314.0" layoutY="305.0" prefHeight="39.0" prefWidth="700.0" promptText="Ej: 2021" style="&#10;            -fx-background-radius: 20;&#10;         ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Label layoutX="68.0" layoutY="571.0" text="Tipo de Licencia:">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tbTipoLicencia" layoutX="314.0" layoutY="568.0" prefHeight="39.0" prefWidth="700.0" promptText="Ej: Licencia de Pago" style="&#10;            -fx-background-radius: 20;&#10;         ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+   </children>
+</Pane>

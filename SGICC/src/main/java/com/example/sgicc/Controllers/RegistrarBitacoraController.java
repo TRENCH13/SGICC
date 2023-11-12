@@ -18,7 +18,7 @@ import java.sql.Date;
 import java.util.Calendar;
 
 public class RegistrarBitacoraController {
-    public Label lbTítulo;
+
     public int rolActual;
     public int idCentroComputo;
     public TextField tbTituloBitacora;
@@ -40,7 +40,6 @@ public class RegistrarBitacoraController {
             Parent root = fxmlLoader.load();
 
             SeleccionarComponentesController seleccionarComponentesController = fxmlLoader.getController();
-            seleccionarComponentesController.lbTítulo.setText("Seleccionar componentes");
             seleccionarComponentesController.rolActual = rolActual;
             seleccionarComponentesController.idCentroComputo = idCentroComputo;
             seleccionarComponentesController.bitacoraActual = bitacoraActual;
@@ -53,9 +52,9 @@ public class RegistrarBitacoraController {
         }
     }
 
-    public void btnCancelar(ActionEvent actionEvent) throws IOException {
+    public void btnRegresar(ActionEvent actionEvent) throws IOException {
         if (!tbTituloBitacora.getText().isEmpty() || !taDescripcion.getText().isEmpty()){
-            if (Alerta.crearAlertaConfirmacion("Salir", "¿Está seguro de cancelar la operación?", "Si sale ahora no se guardarán los datos.")){
+            if (Alerta.crearAlertaConfirmacion("Salir", "¿Está seguro de regresar?", "Si sale ahora no se guardarán los datos.")){
                 regresarVentana();
             }
         }else{
@@ -72,7 +71,7 @@ public class RegistrarBitacoraController {
         bitacoraController.llenarTabla(idCentroComputo);
         bitacoraController.inicializarBusquedaBitacoras();
 
-        Scene scene = lbTítulo.getScene();
+        Scene scene = tbTituloBitacora.getScene();
         AnchorPane apVistaMenuCC = (AnchorPane) scene.lookup("#apVistaMenuCC");
 
         apVistaMenuCC.getChildren().setAll(root);

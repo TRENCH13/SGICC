@@ -43,7 +43,6 @@ public class BitacoraController {
         Parent root = fxmlLoader.load();
 
         RegistrarBitacoraController bitacoraController = fxmlLoader.getController();
-        bitacoraController.lbTítulo.setText("Registrar Bitácora");
         bitacoraController.rolActual = rolActual;
         bitacoraController.idCentroComputo = idCentroComputo;
 

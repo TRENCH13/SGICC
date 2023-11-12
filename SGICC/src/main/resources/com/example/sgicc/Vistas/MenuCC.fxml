@@ -84,28 +84,8 @@
                      </cursor>
                   </Button>
 
-                  <Button fx:id="btnConsultarSoftware" graphicTextGap="10.0" mnemonicParsing="false" onAction="#btnConsultarSoftware" prefHeight="80.0" prefWidth="297.0" text="Consultar Software Instalado" textFill="WHITE">
-                     <style>
-                        -fx-background-color: #295BA5;
-                        -fx-border-width: 0;-fx-padding: 0 0 0 -5;</style>
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Recursos/icono_software.png" />
-                           </image></ImageView>
-                     </graphic>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-
-                  <Button fx:id="btnAsignarSoftware" graphicTextGap="13.0" mnemonicParsing="false" onAction="#btnAsignarSoftware" prefHeight="80.0" prefWidth="297.0" text="Asignar Software a Equipo" textFill="WHITE">
-                     <style>
-                        -fx-background-color: #295BA5;
-                        -fx-border-width: 0;-fx-padding: 0 0 0 -25;</style>
+                  <Button fx:id="btnSoftwareInstalado" graphicTextGap="15.0" mnemonicParsing="false" onAction="#btnSoftwareInstalado" prefHeight="80.0" prefWidth="297.0" text="Software Instalado" textFill="WHITE">
+                     <style>-fx-background-color: #295BA5; -fx-border-width: 0; -fx-padding: 0 0 0 -78;</style>
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>

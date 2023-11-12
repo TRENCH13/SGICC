@@ -62,7 +62,7 @@ public class RegistrarEditarEquipoComputoController {
                     try {
                         regresarVentana();
                     } catch (IOException e) {
-                        throw new RuntimeException(e);
+                        e.printStackTrace();
                     }
                 }
             }
@@ -73,7 +73,7 @@ public class RegistrarEditarEquipoComputoController {
                     try {
                         regresarVentana();
                     } catch (IOException e) {
-                        throw new RuntimeException(e);
+                        e.printStackTrace();
                     }
                 }
             }
@@ -84,7 +84,7 @@ public class RegistrarEditarEquipoComputoController {
     void btnRegresar(ActionEvent event) throws IOException {
 
         if (!tbGabineteEQ.getText().isEmpty() || !tbProcesadorEQ.getText().isEmpty() || !tbAlmacenamientoEQ.getText().isEmpty() || !tbTarjetaMadreEQ.getText().isEmpty() || !tbCodigoEQ.getText().isEmpty() || !tbMemoriaEQ.getText().isEmpty()){
-            if (Alerta.crearAlertaConfirmacion("Salir", "¿Esta seguro de salir?", "Si sale ahora no se guardará el Centro de Cómputo.")){
+            if (Alerta.crearAlertaConfirmacion("Salir", "¿Esta seguro de regresar?", "Si sale ahora no se guardará el Centro de Cómputo.")){
                 regresarVentana();
             }
         }else{

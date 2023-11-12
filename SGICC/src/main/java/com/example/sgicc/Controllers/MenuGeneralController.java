@@ -7,7 +7,6 @@ import com.example.sgicc.Modelos.CentroComputo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -158,7 +157,7 @@ public class MenuGeneralController {
 
 
                     if (rolActual == 2 || rolActual == 3) {
-                        menuCC.btnAsignarSoftware.setVisible(false);
+                        menuCC.btnSoftwareInstalado.setVisible(false);
                     }
 
                     Label lbUserNext = (Label) scene.lookup("#lbUser");
@@ -217,7 +216,7 @@ public class MenuGeneralController {
                     menuCC.idCentroComputo = idCentro;
                     stage.setScene(scene);
                     if (rolActual == 2 || rolActual == 3) {
-                        menuCC.btnAsignarSoftware.setVisible(false);
+                        menuCC.btnSoftwareInstalado.setVisible(false);
                     }
 
                     Label lbUserNext = (Label) scene.lookup("#lbUser");
@@ -238,24 +237,42 @@ public class MenuGeneralController {
     @FXML
     void btnUsuarios(ActionEvent event) throws IOException{
         Stage stage = (Stage) lbUser.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/ConsultarUsuario.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/Usuarios.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        ConsultarUsuarioController consultarUsuarioController = fxmlLoader.getController();
-        consultarUsuarioController.btnAgregar.setText("Agregar nuevo Usuario");
-        consultarUsuarioController.lbUser.setText(lbUser.getText());
-        consultarUsuarioController.lbTítulo.setText("Usuarios");
-        consultarUsuarioController.setIdRol(rolActual);
-        consultarUsuarioController.llenarTabla();
+        UsuariosController usuariosController = fxmlLoader.getController();
+        usuariosController.btnAgregar.setText("Agregar nuevo Usuario");
+        usuariosController.lbUser.setText(lbUser.getText());
+        usuariosController.lbTítulo.setText("Usuarios");
+        usuariosController.setIdRol(rolActual);
+        usuariosController.llenarTabla();
         stage.setTitle("Usuarios");
         stage.getIcons().add(new Image(IniciadorAplicacion.class.getResource("/com/example/sgicc/Recursos/icono_UV.png").toExternalForm()));
         stage.show();
     }
 
     @FXML
-    void btnSoftware(ActionEvent event) {
+    void btnSoftware(ActionEvent event) throws IOException {
+        Stage stage = (Stage) lbUser.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(IniciadorAplicacion.class.getResource("Vistas/Software.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        SoftwareController ventanasoftware = fxmlLoader.getController();
+        ventanasoftware.llenarTabla();
+        ventanasoftware.lbUser.setText(lbUser.getText());
+        ventanasoftware.rolActual = rolActual;
 
+        if (rolActual != 1) {
+            ventanasoftware.btnRegistrar.setVisible(false);
+            ventanasoftware.btnEditar.setVisible(false);
+            ventanasoftware.btnEliminar.setVisible(false);
+        }
+
+        stage.setTitle("Software");
+        stage.getIcons().add(new Image(IniciadorAplicacion.class.getResource("/com/example/sgicc/Recursos/icono_UV.png").toExternalForm()));
+        stage.show();
     }
 
     @FXML
