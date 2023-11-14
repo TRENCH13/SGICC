@@ -70,6 +70,7 @@ public class EquiposComputoController {
 
             if (Alerta.crearAlertaConfirmacion("Eliminar Equipo de Cómputo", "¿Está seguro de eliminar el equipo de cómputo?", "Si se elimina, su asignación se perderá.")){
                 EquipoComputo equipoSeleccionado = tvEquiposComputo.getSelectionModel().getSelectedItem();
+                EquipoComputoDAO.desinstalarSoftware(equipoSeleccionado.getIdEquipoComputo());
                 EquipoComputoDAO.eliminarEquipoComputo(equipoSeleccionado.getIdEquipoComputo());
                 llenarTabla(idCentroComputo);
 

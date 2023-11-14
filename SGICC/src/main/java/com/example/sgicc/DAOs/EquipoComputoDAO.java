@@ -161,4 +161,27 @@ public class EquipoComputoDAO {
 
         return modificacionExistosa;
     }
+
+    public static void desinstalarSoftware(int idEquipoComputo) {
+        ConexionBD conexionSQL = ConexionBD.getInstance();
+        Connection conexionBD = conexionSQL.getConexion();
+
+        try {
+            String consultaSQL = "DELETE FROM softwareinstalado WHERE idEquipoComputo = ?";
+            PreparedStatement statement = conexionBD.prepareStatement(consultaSQL);
+            statement.setInt(1, idEquipoComputo);
+
+            int filasAfectadas = statement.executeUpdate();
+
+            if (filasAfectadas > 0) {
+                System.out.println("Se eliminaron " + filasAfectadas + " registros de software instalado para el equipo con ID: " + idEquipoComputo);
+            } else {
+                System.out.println("No se encontraron registros de software instalado para el equipo con ID: " + idEquipoComputo);
+            }
+
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

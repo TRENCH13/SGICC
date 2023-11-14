@@ -162,7 +162,7 @@ public class MenuGeneralController {
 
                     Label lbUserNext = (Label) scene.lookup("#lbUser");
                     lbUserNext.setText(lbUser.getText());
-                    stage.setTitle("CC1");
+                    stage.setTitle(codigoCC);
                     stage.getIcons().add(new Image(IniciadorAplicacion.class.getResource("/com/example/sgicc/Recursos/icono_UV.png").toExternalForm()));
                     stage.show();
                 } catch (IOException ex) {
@@ -172,6 +172,7 @@ public class MenuGeneralController {
 
             botonEliminar.setOnAction(e ->{
                 if (Alerta.crearAlertaConfirmacion("Eliminar Centro de Cómputo", "¿Está seguro de eliminar el centro de cómputo?", "Si se elimina, todos sus elementos perderan su asignación.")){
+                    CentroComputoDAO.desasignarParaEliminarCentroComputo(idCentro);
                     CentroComputoDAO.eliminarCentroComputo(idCentro);
                     asignarCCRecuperados();
                 }
@@ -215,13 +216,14 @@ public class MenuGeneralController {
                     menuCC.setIdRol(rolActual);
                     menuCC.idCentroComputo = idCentro;
                     stage.setScene(scene);
+
                     if (rolActual == 2 || rolActual == 3) {
                         menuCC.btnSoftwareInstalado.setVisible(false);
                     }
 
                     Label lbUserNext = (Label) scene.lookup("#lbUser");
                     lbUserNext.setText(lbUser.getText());
-                    stage.setTitle("CC1");
+                    stage.setTitle(codigoCC);
                     stage.getIcons().add(new Image(IniciadorAplicacion.class.getResource("/com/example/sgicc/Recursos/icono_UV.png").toExternalForm()));
                     stage.show();
                 } catch (IOException ex) {

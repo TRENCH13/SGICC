@@ -103,7 +103,9 @@ public class RegistrarEditarUsuarioController {
 
         stage.setScene(scene);
         Label lbUserNext = (Label) scene.lookup("#lbUser");
-        lbUserNext.setText(lbUser.getText());
+        if (esEdicion) {
+            usuariosController.lbUser.setText(tbNombre.getText()+" "+tbApellido.getText());
+        }
         stage.setTitle("Usuarios");
         stage.getIcons().add(new Image(IniciadorAplicacion.class.getResource("/com/example/sgicc/Recursos/icono_UV.png").toExternalForm()));
         stage.show();

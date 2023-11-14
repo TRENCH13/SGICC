@@ -113,4 +113,54 @@ public class CentroComputoDAO {
             e.printStackTrace();
         }
     }
+
+    public static void desasignarParaEliminarCentroComputo(int idCentroDeComputo) {
+        ConexionBD conexionSQL = ConexionBD.getInstance();
+        Connection conexionBD = conexionSQL.getConexion();
+
+        try {
+            // Desasignar software instalado asociado a los equipos de cómputo en el centro
+            String desasignarSoftwareSQL = "DELETE FROM softwareinstalado WHERE idEquipoComputo IN (SELECT idEquipoComputo FROM equipocomputo WHERE idCentroDeComputo = ?)";
+            PreparedStatement desasignarSoftwareStatement = conexionBD.prepareStatement(desasignarSoftwareSQL);
+            desasignarSoftwareStatement.setInt(1, idCentroDeComputo);
+            desasignarSoftwareStatement.executeUpdate();
+            desasignarSoftwareStatement.close();
+
+            // Eliminar equipos de cómputo asociados al centro
+            String eliminarEquiposSQL = "DELETE FROM equipocomputo WHERE idCentroDeComputo = ?";
+            PreparedStatement eliminarEquiposStatement = conexionBD.prepareStatement(eliminarEquiposSQL);
+            eliminarEquiposStatement.setInt(1, idCentroDeComputo);
+            eliminarEquiposStatement.executeUpdate();
+            eliminarEquiposStatement.close();
+
+            // Eliminar bitácoras asociadas al centro
+            String eliminarBitacorasSQL = "DELETE FROM bitacora WHERE idCentroDeComputo = ?";
+            PreparedStatement eliminarBitacorasStatement = conexionBD.prepareStatement(eliminarBitacorasSQL);
+            eliminarBitacorasStatement.setInt(1, idCentroDeComputo);
+            int filasAfectadasBitacoras = eliminarBitacorasStatement.executeUpdate();
+            eliminarBitacorasStatement.close();
+
+            // Eliminar periféricos asociados al centro
+            String eliminarPerifericosSQL = "DELETE FROM periferico WHERE idCentroDeComputo = ?";
+            PreparedStatement eliminarPerifericosStatement = conexionBD.prepareStatement(eliminarPerifericosSQL);
+            eliminarPerifericosStatement.setInt(1, idCentroDeComputo);
+            int filasAfectadasPerifericos = eliminarPerifericosStatement.executeUpdate();
+            eliminarPerifericosStatement.close();
+
+            if (filasAfectadasPerifericos > 0) {
+                System.out.println("Se desasignaron y eliminaron " + filasAfectadasPerifericos + " periféricos asociados al centro con ID: " + idCentroDeComputo);
+            } else {
+                System.out.println("No se encontraron periféricos para desasignar y eliminar en el centro con ID: " + idCentroDeComputo);
+            }
+
+            if (filasAfectadasBitacoras > 0) {
+                System.out.println("Se desasignaron y eliminaron " + filasAfectadasBitacoras + " bitácoras asociadas al centro con ID: " + idCentroDeComputo);
+            } else {
+                System.out.println("No se encontraron bitácoras para desasignar y eliminar en el centro con ID: " + idCentroDeComputo);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

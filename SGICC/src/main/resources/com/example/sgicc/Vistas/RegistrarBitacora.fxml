@@ -41,7 +41,7 @@
                 <Font size="19.0" />
             </font>
         </TextField>
-        <TextArea fx:id="taDescripcion" layoutX="56.0" layoutY="379.0" prefHeight="240.0" prefWidth="671.0" promptText="Ej: Esta bitacora presenta las observaciones realizadas a los equipos de cómputo pertenecientes al CC1.">
+        <TextArea fx:id="taDescripcion" layoutX="56.0" layoutY="379.0" prefHeight="240.0" prefWidth="671.0" promptText="Ej: Esta bitacora presenta las observaciones realizadas a los equipos de cómputo pertenecientes al CC1." wrapText="true">
             <font>
                 <Font size="19.0" />
             </font>
