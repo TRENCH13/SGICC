@@ -47,10 +47,16 @@ public class UsuariosController {
     public void btnEliminar(ActionEvent actionEvent) {
         if (!tvUsuarios.getSelectionModel().isEmpty()){
 
-            if (Alerta.crearAlertaConfirmacion("Eliminar Usuario", "¿Está seguro de eliminar este usuario?", "Si desea continuar de clic en 'Aceptar'.")){
-                Usuario usuarioSeleccionado = (Usuario) tvUsuarios.getSelectionModel().getSelectedItem();
-                UsuarioDAO.eliminarUsuario(usuarioSeleccionado.getIdUsuario());
-                llenarTabla();
+            if (UsuarioDAO.contarEncargados() > 1) {
+
+                if (Alerta.crearAlertaConfirmacion("Eliminar Usuario", "¿Está seguro de eliminar este usuario?", "Si desea continuar de clic en 'Aceptar'.")){
+                    Usuario usuarioSeleccionado = (Usuario) tvUsuarios.getSelectionModel().getSelectedItem();
+                    UsuarioDAO.eliminarUsuario(usuarioSeleccionado.getIdUsuario());
+                    llenarTabla();
+                }
+
+            } else {
+                Alerta.crearAlertaError("Error", "Error al eliminar al usuario.", "Debe mantener al menos 1 usuario.").showAndWait();
             }
 
         }else {

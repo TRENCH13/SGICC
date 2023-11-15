@@ -55,7 +55,7 @@ public class UsuarioDAO {
         List<Usuario> usuarios = new ArrayList<>();
 
         try{
-            String consultaSQL = "SELECT * FROM usuario";
+            String consultaSQL = "SELECT * FROM usuario WHERE idUsuario <> 10;";
             PreparedStatement statement = conexionBD.prepareStatement(consultaSQL);
             ResultSet resultado = statement.executeQuery();
 
@@ -187,6 +187,29 @@ public class UsuarioDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public static int contarEncargados() {
+        ConexionBD conexionSQL = ConexionBD.getInstance();
+        Connection conexionBD = conexionSQL.getConexion();
+
+        try {
+            String contarEncargadosSQL = "SELECT COUNT(*) AS cantidadEncargados FROM usuario WHERE idRol = 1 ORDER BY numPersonal";
+            PreparedStatement contarEncargadosStatement = conexionBD.prepareStatement(contarEncargadosSQL);
+            ResultSet resultado = contarEncargadosStatement.executeQuery();
+
+            if (resultado.next()) {
+                int cantidadEncargados = resultado.getInt("cantidadEncargados");
+                return cantidadEncargados;
+            }
+
+            contarEncargadosStatement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        // En caso de error o si no se encuentra ningún resultado, retorna -1 o algún valor indicativo de error
+        return -1;
     }
 
 }
