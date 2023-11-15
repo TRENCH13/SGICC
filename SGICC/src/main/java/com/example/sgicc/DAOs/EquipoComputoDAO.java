@@ -70,9 +70,9 @@ public class EquipoComputoDAO {
             int filasAfectadas = statement.executeUpdate();
 
             if (filasAfectadas > 0) {
-                Alerta.crearAlertaInformacion("Registro Exitoso", "Se guardo correctamente el nuevo Equipo de Cómputo.", "").showAndWait();
+                Alerta.crearAlertaInformacion("Registro exitoso", "Se guardó correctamente el nuevo equipo de cómputo.", "").showAndWait();
             } else {
-                Alerta.crearAlertaError("Error", "Error en la Base de Datos", "No se guardó el Equipo de Cómputo.").showAndWait();
+                Alerta.crearAlertaError("Error", "Error en la base de datos", "No se guardó el equipo de cómputo, por favor inténtelo más tarde.").showAndWait();
             }
 
             statement.close();
@@ -94,9 +94,9 @@ public class EquipoComputoDAO {
             int filasAfectadas = statement.executeUpdate();
 
             if (filasAfectadas > 0) {
-                Alerta.crearAlertaInformacion("Eliminación Exitosa", "Se elimino correctamente el Equipo de Cómputo.", "").showAndWait();
+                Alerta.crearAlertaInformacion("Eliminación exitosa", "Se eliminó correctamente el equipo de cómputo.", "").showAndWait();
             } else {
-                Alerta.crearAlertaError("Error", "Error en la Base de Datos", "No se eliminó el Equipo de Cómputo.").showAndWait();
+                Alerta.crearAlertaError("Error", "Error en la base de datos", "No se eliminó el equipo de cómputo, por favor inténtelo más tarde.").showAndWait();
             }
 
             statement.close();
@@ -125,9 +125,9 @@ public class EquipoComputoDAO {
             int filasAfectadas = statement.executeUpdate();
 
             if (filasAfectadas > 0) {
-                Alerta.crearAlertaInformacion("Actualización Exitosa", "Se han actualizado los datos del Equipo de Cómputo.", "").showAndWait();
+                Alerta.crearAlertaInformacion("Actualización exitosa", "Se actualizó correctamente el equipo de cómputo.", "").showAndWait();
             } else {
-                Alerta.crearAlertaError("Error", "Error en la Base de Datos", "No se han actualizado los datos del Equipo de Cómputo.").showAndWait();
+                Alerta.crearAlertaError("Error", "Error en la base de datos", "No se actualizó el equipo de cómputo, por favor inténtelo más tarde.").showAndWait();
             }
 
             statement.close();

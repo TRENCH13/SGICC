@@ -107,7 +107,7 @@ public class InicioSesionController {
             contraseniaBusqueda = pfContrasenia.getText();
             return true;
         }else{
-            Alerta.crearAlertaError("Error", "Error el el Inicio de Sesión", "Error a ingresar el Numero de Personal y/o Contraseña.").showAndWait();
+            Alerta.crearAlertaError("Error", "Error en el Inicio de Sesión", "Error al ingresar el Numero de Personal y/o Contraseña.").showAndWait();
             return false;
         }
     }

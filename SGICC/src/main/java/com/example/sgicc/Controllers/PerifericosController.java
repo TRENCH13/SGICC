@@ -57,13 +57,13 @@ public class PerifericosController {
     @FXML
     void btnEliminar(ActionEvent event) {
         if (!tvPerifericos.getSelectionModel().isEmpty()) {
-            if (Alerta.crearAlertaConfirmacion("Eliminar Periferico", "¿Está seguro de eliminar el Periferico?", "Si se elimina, su asignación se perderá.")) {
+            if (Alerta.crearAlertaConfirmacion("Eliminar Periférico", "¿Está seguro de eliminar el Periférico?", "Si se elimina, su asignación se perderá.")) {
                 Periferico perifericoSeleccionado = tvPerifericos.getSelectionModel().getSelectedItem();
                 PerifericoDAO.eliminarPeriferico(perifericoSeleccionado.getIdPeriferico());
                 llenarTabla(idCentroComputo);
             }
         } else {
-            Alerta.crearAlertaError("Error", "Error al eliminar el Periferico.", "Debes seleccionar el Periferico que deseas eliminar.").showAndWait();
+            Alerta.crearAlertaError("Error", "Error al eliminar el Periférico.", "Debe seleccionar el Periférico que desea eliminar.").showAndWait();
         }
     }
 
@@ -89,7 +89,7 @@ public class PerifericosController {
 
             apVistaMenuCC.getChildren().setAll(root);
         } else {
-            Alerta.crearAlertaError("Error", "Error al editar el Periferico.", "Debes seleccionar el Periferico que deseas editar.").showAndWait();
+            Alerta.crearAlertaError("Error", "Error al editar el Periférico.", "Debe seleccionar el Periférico que desea editar.").showAndWait();
         }
     }
 

@@ -70,7 +70,7 @@ public class SoftwareController {
                 llenarTabla();
             }
         } else {
-            Alerta.crearAlertaError("Error", "Error al eliminar el software.", "Debes seleccionar el software que deseas eliminar.").showAndWait();
+            Alerta.crearAlertaError("Error", "Error al eliminar el software.", "Debe seleccionar el software que desea eliminar.").showAndWait();
         }
     }
 
@@ -98,7 +98,7 @@ public class SoftwareController {
             stage.getIcons().add(new Image(IniciadorAplicacion.class.getResource("/com/example/sgicc/Recursos/icono_UV.png").toExternalForm()));
             stage.show();
         } else {
-            Alerta.crearAlertaError("Error", "Error al editar el software.", "Debes seleccionar el software que deseas editar.").showAndWait();
+            Alerta.crearAlertaError("Error", "Error al editar el software.", "Debe seleccionar el software que desea editar.").showAndWait();
         }
 
     }

@@ -56,9 +56,9 @@ public class BitacoraDAO {
             int filasAfectadas = statement.executeUpdate();
 
             if (filasAfectadas > 0) {
-                Alerta.crearAlertaInformacion("Registro Exitoso", "Se guardo correctamente la nueva bitácora.", "").showAndWait();
+                Alerta.crearAlertaInformacion("Registro exitoso", "Se guardó correctamente la nueva bitácora.", "").showAndWait();
             } else {
-                Alerta.crearAlertaError("Error", "Error en la Base de Datos", "No se guardó la bitácora.").showAndWait();
+                Alerta.crearAlertaError("Error", "Error en la base de datos", "No se guardó la bitácora, por favor inténtelo más tarde.").showAndWait();
             }
 
             statement.close();

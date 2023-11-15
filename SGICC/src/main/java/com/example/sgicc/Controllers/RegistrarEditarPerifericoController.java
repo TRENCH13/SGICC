@@ -51,7 +51,7 @@ public class RegistrarEditarPerifericoController {
     void btnRegistrarEditar(ActionEvent event) {
         if (!esEdicion) {
             if (validarCampos()) {
-                if (Alerta.crearAlertaConfirmacion("Registrar Periferico", "¿Seguro quiere registrar el Periferico?", "Al aceptar, el Periferico se Guardará.")) {
+                if (Alerta.crearAlertaConfirmacion("Registrar Periférico", "¿Seguro quiere registrar el Periférico?", "Al aceptar, el Periférico se Guardará.")) {
                     PerifericoDAO.registrarPeriferico(taEspecificaciones.getText(), tbCodigo.getText(), tbNombre.getText(), cbTipo.getValue().getIdTipoPeriferico(), idCentroComputo);
                     try {
                         regresarVentana();
@@ -62,7 +62,7 @@ public class RegistrarEditarPerifericoController {
             }
         } else {
             if (validarCampos()) {
-                if (Alerta.crearAlertaConfirmacion("Editar Periferico", "¿Seguro quiere editar el Periferico?", "Al aceptar, el Periferico se Actualizará.")) {
+                if (Alerta.crearAlertaConfirmacion("Editar Periférico", "¿Seguro quiere editar el Periférico?", "Al aceptar, el Periférico se Actualizará.")) {
                     PerifericoDAO.editarPeriferico(perifericoEditar.getIdPeriferico(), taEspecificaciones.getText(), tbCodigo.getText(), tbNombre.getText(), cbTipo.getValue().getIdTipoPeriferico(), idCentroComputo);
                     try {
                         regresarVentana();
@@ -77,7 +77,7 @@ public class RegistrarEditarPerifericoController {
     @FXML
     void btnRegresar(ActionEvent event) throws IOException {
         if (!tbCodigo.getText().isEmpty() || cbTipo.getSelectionModel().getSelectedItem() != null || !tbNombre.getText().isEmpty() || !taEspecificaciones.getText().isEmpty()) {
-            if (Alerta.crearAlertaConfirmacion("Salir", "¿Esta seguro de salir?", "Si sale ahora no se guardará el Periferico.")){
+            if (Alerta.crearAlertaConfirmacion("Salir", "¿Está seguro de salir?", "Si sale ahora no se guardará el Periférico.")){
                 regresarVentana();
             }
         }else{

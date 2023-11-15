@@ -54,7 +54,7 @@ public class RegistrarBitacoraController {
 
     public void btnRegresar(ActionEvent actionEvent) throws IOException {
         if (!tbTituloBitacora.getText().isEmpty() || !taDescripcion.getText().isEmpty()){
-            if (Alerta.crearAlertaConfirmacion("Salir", "¿Está seguro de regresar?", "Si sale ahora no se guardarán los datos.")){
+            if (Alerta.crearAlertaConfirmacion("Salir", "¿Está seguro de salir?", "Si sale ahora no se guardarán los datos.")){
                 regresarVentana();
             }
         }else{

@@ -94,9 +94,9 @@ public class SoftwareDAO {
             int filasAfectadas = statement.executeUpdate();
 
             if (filasAfectadas > 0) {
-                Alerta.crearAlertaInformacion("Registro Exitoso", "Se guardo correctamente el nuevo Software.", "").showAndWait();
+                Alerta.crearAlertaInformacion("Registro exitoso", "Se guardó correctamente el nuevo software.", "").showAndWait();
             } else {
-                Alerta.crearAlertaError("Error", "Error en la Base de Datos", "No se guardó el Sofware.").showAndWait();
+                Alerta.crearAlertaError("Error", "Error en la base de datos", "No se guardó el sofware, por favor inténtelo más tarde.").showAndWait();
             }
 
             statement.close();
@@ -122,9 +122,9 @@ public class SoftwareDAO {
             int filasAfectadas = statement.executeUpdate();
 
             if (filasAfectadas > 0) {
-                Alerta.crearAlertaInformacion("Actualización Exitosa", "Se han actualizado los datos del Software.", "").showAndWait();
+                Alerta.crearAlertaInformacion("Actualización exitosa", "Se actualizó correctamente el software.", "").showAndWait();
             } else {
-                Alerta.crearAlertaError("Error", "Error en la Base de Datos", "No se han actualizado los datos del Software.").showAndWait();
+                Alerta.crearAlertaError("Error", "Error en la base de datos", "No se actualizó el software, por favor inténtelo más tarde.").showAndWait();
             }
 
             statement.close();
@@ -145,9 +145,9 @@ public class SoftwareDAO {
             int filasAfectadas = statement.executeUpdate();
 
             if (filasAfectadas > 0) {
-                Alerta.crearAlertaInformacion("Eliminación Exitosa", "Se elimino correctamente el Software.", "").showAndWait();
+                Alerta.crearAlertaInformacion("Eliminación exitosa", "Se eliminó correctamente el software.", "").showAndWait();
             } else {
-                Alerta.crearAlertaError("Error", "Error en la Base de Datos", "No se eliminó el Software.").showAndWait();
+                Alerta.crearAlertaError("Error", "Error en la base de datos", "No se eliminó el software, por favor inténtelo más tarde.").showAndWait();
             }
 
             statement.close();

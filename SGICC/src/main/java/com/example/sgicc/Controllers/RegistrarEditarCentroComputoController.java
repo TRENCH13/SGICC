@@ -51,7 +51,7 @@ public class RegistrarEditarCentroComputoController {
     void btnRegistrarEditar(ActionEvent event) {
         if (!esEdicion){
             if (validarCampos()){
-                if (Alerta.crearAlertaConfirmacion("Registrar Centro de Cómputo", "¿Seguro quiere registrar el Centro de Cómputo?", "Al aceptar, el Centro de Computo se Guardará.")){
+                if (Alerta.crearAlertaConfirmacion("Registrar Centro de Cómputo", "¿Seguro quiere registrar el Centro de Cómputo?", "Al aceptar, el Centro de Cómputo se Guardará.")){
                     CentroComputoDAO.registrarCentroComputo(tbCodigoCC.getText(), tbEdificio.getText());
                     try {
                         regresarVentana();
@@ -62,7 +62,7 @@ public class RegistrarEditarCentroComputoController {
             }
         }else{
             if (validarCampos()){
-                if (Alerta.crearAlertaConfirmacion("Editar Centro de Cómputo", "¿Seguro quiere editar el Centro de Cómputo?", "Al aceptar, el Centro de Computo se Actualizará.")){
+                if (Alerta.crearAlertaConfirmacion("Editar Centro de Cómputo", "¿Seguro quiere editar el Centro de Cómputo?", "Al aceptar, el Centro de Cómputo se Actualizará.")){
                     CentroComputoDAO.editarCentroComputo(centroEditar.getIdCentroDeComputo(), tbCodigoCC.getText(), tbEdificio.getText());
                     try {
                         regresarVentana();
@@ -86,7 +86,7 @@ public class RegistrarEditarCentroComputoController {
     void btnRegresar(ActionEvent event) throws IOException {
 
         if (!tbCodigoCC.getText().isEmpty() || !tbEdificio.getText().isEmpty()){
-            if (Alerta.crearAlertaConfirmacion("Salir", "¿Esta seguro de salir?", "Si sale ahora no se guardará el Centro de Cómputo.")){
+            if (Alerta.crearAlertaConfirmacion("Salir", "¿Está seguro de salir?", "Si sale ahora no se guardará el Centro de Cómputo.")){
                 regresarVentana();
             }
         }else{

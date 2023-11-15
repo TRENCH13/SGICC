@@ -64,9 +64,9 @@ public class PerifericoDAO {
             int filasAfectadas = statement.executeUpdate();
 
             if (filasAfectadas > 0) {
-                System.out.println("¡Se ha guardado correctamente el nuevo periférico!");
+                Alerta.crearAlertaInformacion("Registro exitoso", "Se guardó correctamente el nuevo periférico.", "").showAndWait();
             } else {
-                System.out.println("No se guardó el periférico.");
+                Alerta.crearAlertaError("Error", "Error en la base de datos", "No se guardó el periférico, por favor inténtelo más tarde.").showAndWait();
             }
 
             statement.close();
@@ -88,9 +88,9 @@ public class PerifericoDAO {
             int filasAfectadas = statement.executeUpdate();
 
             if (filasAfectadas > 0) {
-                Alerta.crearAlertaInformacion("Eliminación Exitosa", "Se elimino correctamente el Periferico.", "").showAndWait();
+                Alerta.crearAlertaInformacion("Eliminación exitosa", "Se eliminó correctamente el periférico.", "").showAndWait();
             } else {
-                Alerta.crearAlertaError("Error", "Error en la Base de Datos", "No se eliminó el Periferico.").showAndWait();
+                Alerta.crearAlertaError("Error", "Error en la base de datos", "No se eliminó el periférico, por favor inténtelo más tarde.").showAndWait();
             }
 
             statement.close();
@@ -117,10 +117,10 @@ public class PerifericoDAO {
 
             if (filasAfectadas > 0) {
                 // La actualización fue exitosa
-                System.out.println("Actualización exitosa del periférico con ID: " + idPeriferico);
+                Alerta.crearAlertaInformacion("Actualización exitosa", "Se actualizó correctamente el periférico.", "").showAndWait();
             } else {
                 // No se pudo actualizar
-                System.out.println("No se pudo actualizar el periférico con ID: " + idPeriferico);
+                Alerta.crearAlertaError("Error", "Error en la base de datos", "No se actualizó el periférico, por favor inténtelo más tarde.").showAndWait();
             }
 
             statement.close();

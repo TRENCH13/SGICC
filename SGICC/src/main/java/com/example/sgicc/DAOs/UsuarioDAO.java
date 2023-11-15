@@ -94,9 +94,9 @@ public class UsuarioDAO {
             int filasAfectadas = statement.executeUpdate();
 
             if (filasAfectadas > 0) {
-                Alerta.crearAlertaInformacion("Eliminación Exitosa", "Se elimino correctamente el usuario.", "").showAndWait();
+                Alerta.crearAlertaInformacion("Eliminación exitosa", "Se eliminó correctamente el usuario.", "").showAndWait();
             } else {
-                Alerta.crearAlertaError("Error", "Error en la Base de Datos", "No se eliminó al usuario.").showAndWait();
+                Alerta.crearAlertaError("Error", "Error en la base de datos", "No se eliminó el usuario, por favor inténtelo más tarde.").showAndWait();
             }
 
             statement.close();
@@ -149,9 +149,9 @@ public class UsuarioDAO {
             int filasAfectadas = statement.executeUpdate();
 
             if (filasAfectadas > 0) {
-                Alerta.crearAlertaInformacion("Registro Exitoso", "Usuario guardado", "Se guardo correctamente el nuevo Usuario.").showAndWait();
+                Alerta.crearAlertaInformacion("Registro exitoso", "Se guardó correctamente el nuevo usuario.", "").showAndWait();
             } else {
-                Alerta.crearAlertaError("Error", "Error en la Base de Datos", "No se guardo el Usuario.").showAndWait();
+                Alerta.crearAlertaError("Error", "Error en la base de datos", "No se guardó el usuario, por favor inténtelo más tarde.").showAndWait();
             }
 
             statement.close();
@@ -178,9 +178,9 @@ public class UsuarioDAO {
             int filasAfectadas = statement.executeUpdate();
 
             if (filasAfectadas > 0) {
-                Alerta.crearAlertaInformacion("Actualización Exitosa", "Se actualizó correctamente al Usuario.", "").showAndWait();
+                Alerta.crearAlertaInformacion("Actualización exitosa", "Se actualizó correctamente el usuario.", "").showAndWait();
             } else {
-                Alerta.crearAlertaError("Error", "Error en la Base de Datos", "No se actualizó al Usuario.").showAndWait();
+                Alerta.crearAlertaError("Error", "Error en la base de datos", "No se actualizó el usuario, por favor inténtelo más tarde.").showAndWait();
             }
 
             statement.close();

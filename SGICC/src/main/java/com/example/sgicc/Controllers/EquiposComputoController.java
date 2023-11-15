@@ -78,7 +78,7 @@ public class EquiposComputoController {
 
         }else {
 
-            Alerta.crearAlertaError("Error", "Error al eliminar el equipo de cómputo.", "Debes seleccionar el equipo de cómputo que deseas eliminar.").showAndWait();
+            Alerta.crearAlertaError("Error", "Error al eliminar el equipo de cómputo.", "Debe seleccionar el equipo de cómputo que desea eliminar.").showAndWait();
 
         }
 
@@ -106,7 +106,7 @@ public class EquiposComputoController {
 
             apVistaMenuCC.getChildren().setAll(root);
         } else {
-            Alerta.crearAlertaError("Error", "Error al editar el equipo de cómputo.", "Debes seleccionar el equipo de cómputo que deseas editar.").showAndWait();
+            Alerta.crearAlertaError("Error", "Error al editar el equipo de cómputo.", "Debe seleccionar el equipo de cómputo que desea editar.").showAndWait();
         }
 
     }

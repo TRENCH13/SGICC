@@ -57,7 +57,7 @@ public class RegistrarEditarEquipoComputoController {
     void btnRegistrarEditar(ActionEvent event) {
         if (!esEdicion){
             if (validarCampos()){
-                if (Alerta.crearAlertaConfirmacion("Registrar Equipo de Cómputo", "¿Seguro quiere registrar el Equipo de Cómputo?", "Al aceptar, el Equipo de Computo se Guardará.")){
+                if (Alerta.crearAlertaConfirmacion("Registrar Equipo de Cómputo", "¿Seguro quiere registrar el Equipo de Cómputo?", "Al aceptar, el Equipo de Cómputo se Guardará.")){
                     EquipoComputoDAO.registrarEquipoComputo(tbCodigoEQ.getText(), tbProcesadorEQ.getText(), tbMemoriaEQ.getText(), tbAlmacenamientoEQ.getText(), tbTarjetaMadreEQ.getText(), tbGabineteEQ.getText(), tbSistemaOperativoEQ.getText(), "Disponible", idCentroComputo);
                     try {
                         regresarVentana();
@@ -68,7 +68,7 @@ public class RegistrarEditarEquipoComputoController {
             }
         }else{
             if (validarCampos()){
-                if (Alerta.crearAlertaConfirmacion("Editar Centro de Cómputo", "¿Seguro quiere editar el Centro de Cómputo?", "Al aceptar, el Centro de Computo se Actualizará.")){
+                if (Alerta.crearAlertaConfirmacion("Editar Centro de Cómputo", "¿Seguro quiere editar el Centro de Cómputo?", "Al aceptar, el Centro de Cómputo se Actualizará.")){
                     EquipoComputoDAO.editarEquipoComputo(equipoEditar.getIdEquipoComputo(), tbCodigoEQ.getText(), tbProcesadorEQ.getText(), tbMemoriaEQ.getText(), tbAlmacenamientoEQ.getText(), tbTarjetaMadreEQ.getText(), tbGabineteEQ.getText(), tbSistemaOperativoEQ.getText(), idCentroComputo);
                     try {
                         regresarVentana();
@@ -84,7 +84,7 @@ public class RegistrarEditarEquipoComputoController {
     void btnRegresar(ActionEvent event) throws IOException {
 
         if (!tbGabineteEQ.getText().isEmpty() || !tbProcesadorEQ.getText().isEmpty() || !tbAlmacenamientoEQ.getText().isEmpty() || !tbTarjetaMadreEQ.getText().isEmpty() || !tbCodigoEQ.getText().isEmpty() || !tbMemoriaEQ.getText().isEmpty()){
-            if (Alerta.crearAlertaConfirmacion("Salir", "¿Esta seguro de regresar?", "Si sale ahora no se guardará el Centro de Cómputo.")){
+            if (Alerta.crearAlertaConfirmacion("Salir", "¿Esta seguro de salir?", "Si sale ahora no se guardará el Centro de Cómputo.")){
                 regresarVentana();
             }
         }else{

@@ -38,7 +38,7 @@ public class RegistrarEditarUsuarioController {
     public void btnRegresar(ActionEvent actionEvent) throws IOException {
 
         if (!tbNombre.getText().isEmpty() || !tbApellido.getText().isEmpty() || !tbCorreoInstitucional.getText().isEmpty() || !tbNumeroPersonal.getText().isEmpty() || !tbPassword.getText().isEmpty() || !cbRol.getSelectionModel().isEmpty()){
-            if (Alerta.crearAlertaConfirmacion("Salir", "¿Esta seguro de salir?", "Si sale ahora no se guardará el Usuario.")){
+            if (Alerta.crearAlertaConfirmacion("Salir", "¿Está seguro de salir?", "Si sale ahora no se guardará el Usuario.")){
                 regresarVentana();
             }
         }else{
