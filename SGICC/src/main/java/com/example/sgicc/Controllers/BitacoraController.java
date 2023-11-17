@@ -50,13 +50,12 @@ public class BitacoraController {
     }
 
     public void llenarTabla(int idCentroComputo) {
-
         this.idCentroComputo = idCentroComputo;
         tvBitacoras.setItems(null);
         List<Bitacora> bitacorasTabla = BitacoraDAO.consultarBitacoras(idCentroComputo);
-
         tcTitulo.setCellValueFactory(new PropertyValueFactory<>("titulo"));
         tcReporteBitacora.setCellValueFactory(new PropertyValueFactory<>("reporteBitacora"));
+
         tcReporteBitacora.setCellFactory(column -> {
             TableCell<Bitacora, String> cell = new TableCell<Bitacora, String>() {
                 @Override
@@ -74,16 +73,11 @@ public class BitacoraController {
                     }
                 }
             };
-
-            cell.setEditable(false);
-            cell.setStyle("-fx-alignment: justify;");
-
             cell.setOnMouseClicked(event -> {
                 if (!cell.isEmpty() && event.getClickCount() == 2) {
                     showTextPopup(cell.getItem());
                 }
             });
-
             return cell;
         });
 
@@ -95,10 +89,11 @@ public class BitacoraController {
     private void showTextPopup(String text) {
         Stage popupStage = new Stage(StageStyle.UTILITY);
         popupStage.initModality(Modality.APPLICATION_MODAL);
-        popupStage.setTitle("Texto Completo");
+        popupStage.setTitle("Descripción completa");
 
         TextArea textArea = new TextArea(text);
         textArea.setWrapText(true);
+        textArea.setEditable(false);
 
         ScrollPane scrollPane = new ScrollPane(textArea);
         scrollPane.setFitToWidth(true);
